@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English 2do Año – Guía de Estudio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b1a2e;--bg-surface: #11243d;--bg-card: #162d4f;--bg-card-hover: #1a3560;
+  --accent: #f0b429;--accent-glow: #f0b42944;--accent-soft: #f0b42922;
+  --text-primary: #f0ece4;--text-secondary: #b0bfcf;--text-muted: #6b829e;
+  --success: #4ade80;--success-bg: #4ade8018;--error: #f87171;--error-bg: #f8717118;
+  --border: #1e3a5f;--radius: 12px;--radius-sm: 8px;
+  --font-display: 'Bebas Neue', sans-serif;--font-body: 'Lora', serif;--font-mono: 'DM Mono', monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary);line-height:1.7;min-height:100vh;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.hero{position:relative;padding:3rem 1.5rem 2.5rem;text-align:center;background:linear-gradient(165deg,#0f2240 0%,#0b1a2e 50%,#1a1004 100%);overflow:hidden;border-bottom:1px solid var(--border)}
+.hero::before{content:'';position:absolute;top:-60%;right:-30%;width:500px;height:500px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);pointer-events:none}
+.hero-flag{display:inline-flex;gap:4px;margin-bottom:1rem}
+.hero-flag span{width:8px;height:8px;border-radius:50%;display:inline-block}
+.hero-flag span:nth-child(1){background:#75bbf5}.hero-flag span:nth-child(2){background:#fff}.hero-flag span:nth-child(3){background:#75bbf5}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,8vw,4.5rem);letter-spacing:.08em;line-height:1;margin-bottom:.25rem}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero p{font-family:var(--font-mono);font-size:.8rem;color:var(--text-muted);letter-spacing:.15em}
+.nav-wrap{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-scroll{display:flex;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:0 .5rem}
+.nav-scroll::-webkit-scrollbar{display:none}
+.nav-btn{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;color:var(--text-muted);background:none;border:none;padding:.9rem;white-space:nowrap;cursor:pointer;position:relative;transition:color .25s}
+.nav-btn:hover{color:var(--text-secondary)}.nav-btn.active{color:var(--accent)}
+.nav-btn.active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:24px;height:2px;background:var(--accent);border-radius:2px}
+.container{max-width:720px;margin:0 auto;padding:0 1.25rem 4rem;position:relative;z-index:1}
+.section{padding-top:2rem;animation:fadeUp .5s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.section-tag{font-family:var(--font-mono);font-size:.65rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.35rem}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,6vw,2.8rem);letter-spacing:.05em;line-height:1.1;margin-bottom:.5rem}
+.section-subtitle{font-size:.95rem;color:var(--text-secondary);margin-bottom:2rem;max-width:560px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.25rem}
+.card-label{font-family:var(--font-mono);font-size:.6rem;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem}
+.card h3{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.04em;margin-bottom:.5rem}
+.card p,.card li{font-size:.92rem;color:var(--text-secondary);line-height:1.75}
+.table-wrap{overflow-x:auto;margin:1.25rem 0;border-radius:var(--radius-sm);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+thead th{background:var(--bg-surface);font-family:var(--font-mono);font-weight:500;font-size:.65rem;letter-spacing:.12em;color:var(--accent);padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--border);text-transform:uppercase}
+tbody td{padding:.7rem 1rem;border-bottom:1px solid var(--border);color:var(--text-secondary);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}tbody tr:hover{background:var(--accent-soft)}
+td strong{color:var(--text-primary);font-weight:600}
+td .trad{display:block;font-size:.78rem;color:var(--text-muted);font-style:italic;margin-top:2px}
+.example{background:var(--bg-surface);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1rem 1.25rem;margin:1rem 0}
+.example-en{font-size:.95rem;color:var(--text-primary);font-weight:600}
+.example-es{font-size:.82rem;color:var(--text-muted);font-style:italic;margin-top:.2rem}
+details{margin-bottom:1rem}
+details summary{font-family:var(--font-display);font-size:1.2rem;letter-spacing:.04em;cursor:pointer;padding:.75rem 0;color:var(--text-primary);list-style:none;display:flex;align-items:center;gap:.5rem;transition:color .2s;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'▸';font-size:.8rem;color:var(--accent);transition:transform .2s}
+details[open] summary::before{transform:rotate(90deg)}details summary:hover{color:var(--accent)}
+.exercise-block{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.25rem}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.exercise-num{font-family:var(--font-mono);font-size:.6rem;color:var(--accent);letter-spacing:.15em;text-transform:uppercase}
+.exercise-type{font-family:var(--font-mono);font-size:.55rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;background:var(--bg-surface);padding:.25rem .6rem;border-radius:4px}
+.exercise-block h4{font-family:var(--font-display);font-size:1.25rem;letter-spacing:.03em;margin-bottom:.75rem}
+.ex-instruction{font-size:.88rem;color:var(--text-secondary);margin-bottom:1rem}
+.ex-item{margin-bottom:1rem;padding:1rem;background:var(--bg-surface);border-radius:var(--radius-sm);border:1px solid transparent;transition:border-color .3s}
+.ex-item.correct{border-color:var(--success);background:var(--success-bg)}.ex-item.incorrect{border-color:var(--error);background:var(--error-bg)}
+.ex-item label{display:block;font-size:.88rem;color:var(--text-primary);margin-bottom:.5rem}
+.ex-item label .num{font-family:var(--font-mono);font-size:.65rem;color:var(--accent);margin-right:.5rem}
+.ex-input{font-family:var(--font-mono);font-size:.85rem;color:var(--text-primary);background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.55rem .85rem;width:100%;max-width:320px;transition:border-color .2s;outline:none}
+.ex-input:focus{border-color:var(--accent)}.ex-input::placeholder{color:var(--text-muted)}
+.ex-feedback{font-family:var(--font-mono);font-size:.7rem;margin-top:.4rem;letter-spacing:.04em;min-height:1.2em}
+.ex-feedback.show-correct{color:var(--success)}.ex-feedback.show-incorrect{color:var(--error)}
+.btn-check{font-family:var(--font-display);font-size:1rem;letter-spacing:.1em;color:var(--bg);background:var(--accent);border:none;border-radius:var(--radius-sm);padding:.7rem 2rem;cursor:pointer;transition:transform .15s,box-shadow .3s;margin-top:.5rem}
+.btn-check:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow)}.btn-check:active{transform:translateY(0)}
+.btn-reset{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);background:none;border:1px solid var(--border);border-radius:var(--radius-sm);padding:.5rem 1.2rem;cursor:pointer;margin-left:.5rem;transition:border-color .2s,color .2s}
+.btn-reset:hover{border-color:var(--text-muted);color:var(--text-secondary)}
+.score-box{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.75rem;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent-glow);border-radius:var(--radius-sm);padding:.5rem 1rem;margin-top:.75rem;opacity:0;transition:opacity .3s}
+.score-box.visible{opacity:1}
+.ex-select{font-family:var(--font-mono);font-size:.85rem;color:var(--text-primary);background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.55rem .85rem;min-width:160px;outline:none;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b829e' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .75rem center;padding-right:2.2rem}
+.ex-select:focus{border-color:var(--accent)}.ex-select option{background:var(--bg-surface);color:var(--text-primary)}
+.tf-options{display:flex;gap:.5rem;margin-top:.4rem}
+.tf-btn{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;padding:.35rem 1rem;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text-secondary);cursor:pointer;transition:all .2s}
+.tf-btn:hover{border-color:var(--accent);color:var(--accent)}.tf-btn.selected-true{border-color:var(--success);color:var(--success);background:var(--success-bg)}.tf-btn.selected-false{border-color:var(--error);color:var(--error);background:var(--error-bg)}
+.progress-bar{width:100%;height:4px;background:var(--bg-surface);border-radius:2px;margin:.75rem 0;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .5s;width:0}
+.badge{display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent-glow);border-radius:20px;padding:.25rem .7rem;margin-bottom:.75rem}
+.tip{background:#0d2b1a;border:1px solid #1a4d2e;border-radius:var(--radius-sm);padding:1rem 1.25rem;margin:1rem 0}
+.tip-label{font-family:var(--font-mono);font-size:.6rem;color:var(--success);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.3rem}
+.tip p{font-size:.85rem;color:#b0d4c0;line-height:1.7}
+.mem-block{background:#1a0f33;border:1px solid #2d1b5e;border-left:3px solid #a78bfa;border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1rem 1.25rem;margin:1rem 0}
+.mem-label{font-family:var(--font-mono);font-size:.6rem;color:#a78bfa;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem}
+.mem-block p{font-size:.88rem;color:#d0c4f0;line-height:1.7}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:2.5rem 0}
+.footer{text-align:center;padding:2rem 1rem 3rem;border-top:1px solid var(--border);margin-top:2rem}
+.footer p{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);letter-spacing:.08em}
+
+/* Ocean Street Map */
+.ocean-map{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem .75rem;margin-bottom:1.25rem;overflow-x:auto}
+.map-row{display:flex;gap:6px;justify-content:center;flex-wrap:nowrap;padding:6px 0}
+.map-place{font-family:var(--font-mono);font-size:.58rem;font-weight:500;padding:.45rem .4rem;border-radius:6px;text-align:center;color:var(--text-primary);min-width:54px;flex:1;max-width:100px;line-height:1.3;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.map-road{text-align:center;padding:.45rem 0;font-family:var(--font-mono);font-size:.55rem;color:var(--text-muted);letter-spacing:.2em;border-top:2px dashed var(--text-muted);border-bottom:2px dashed var(--text-muted);margin:5px 0;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.map-road::before,.map-road::after{content:'';flex:1;height:0}
+@media(min-width:768px){
+  .container{padding:0 2rem 5rem}.hero{padding:5rem 2rem 3.5rem}.hero p{font-size:.9rem}
+  .nav-btn{font-size:.75rem;padding:1rem 1.3rem}.card{padding:2rem}.exercise-block{padding:2rem}
+  table{font-size:.88rem}.ex-input{max-width:400px}
+  .map-place{font-size:.65rem;min-width:68px;padding:.5rem .6rem}
+}
+@media(min-width:1024px){.container{max-width:800px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-flag"><span></span><span></span><span></span></div>
+  <h1>ENGLISH <em>2do AÑO</em></h1>
+  <p>Ubicación, Lugares y Gramática</p>
+</header>
+
+<nav class="nav-wrap">
+  <div class="nav-scroll">
+    <button class="nav-btn active" onclick="goTo('preposiciones')">Preposiciones</button>
+    <button class="nav-btn" onclick="goTo('lugares')">Lugares</button>
+    <button class="nav-btn" onclick="goTo('gramatica')">A / Some / Any</button>
+    <button class="nav-btn" onclick="goTo('integrador')">Lectura</button>
+    <button class="nav-btn" onclick="goTo('autoeval')">Autoevaluación</button>
+  </div>
+</nav>
+
+<main class="container">
+
+<!-- ═══════════════ UNIT 1 ═══════════════ -->
+<section class="section" id="preposiciones">
+  <div class="section-tag">Unidad 01</div>
+  <h2 class="section-title">Preposiciones de Lugar</h2>
+  <p class="section-subtitle">Las preposiciones de lugar nos indican <strong>dónde</strong> está algo o alguien en relación con otro punto. Pensalas como las "palabras GPS" del inglés.</p>
+
+  <details open>
+    <summary>Teoría — Cuadro completo</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Preposición</th><th>Significado</th><th>Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>on</strong></td><td>en (calle) / sobre</td><td>The school is <strong>on</strong> Rivadavia Street.<span class="trad">La escuela está en la calle Rivadavia.</span></td></tr>
+          <tr><td><strong>in front of</strong></td><td>delante de</td><td>The kiosk is <strong>in front of</strong> the plaza.<span class="trad">El kiosco está delante de la plaza.</span></td></tr>
+          <tr><td><strong>across from / opposite</strong></td><td>enfrente (al otro lado)</td><td>The cinema is <strong>across from</strong> the supermarket.<span class="trad">El cine está enfrente del supermercado.</span></td></tr>
+          <tr><td><strong>next to</strong></td><td>al lado de</td><td>The pharmacy is <strong>next to</strong> the café.<span class="trad">La farmacia está al lado del café.</span></td></tr>
+          <tr><td><strong>between</strong></td><td>entre (dos cosas)</td><td>The restaurant is <strong>between</strong> the bank and the hotel.<span class="trad">El restaurante está entre el banco y el hotel.</span></td></tr>
+          <tr><td><strong>down the street</strong></td><td>más adelante en la calle</td><td>The bookshop is <strong>down the street</strong>.<span class="trad">La librería está más adelante.</span></td></tr>
+          <tr><td><strong>around the corner</strong></td><td>a la vuelta de la esquina</td><td>The subway station is <strong>around the corner</strong>.<span class="trad">La estación de subte está a la vuelta de la esquina.</span></td></tr>
+          <tr><td><strong>near</strong></td><td>cerca de</td><td>The hospital is <strong>near</strong> the school.<span class="trad">El hospital está cerca de la escuela.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mem-block">
+      <div class="mem-label">Truco para recordar — Asociaciones mentales</div>
+      <p>
+        <strong>ON</strong> una calle = el edificio está literalmente "apoyado" sobre esa calle. Pensá: "La escuela está ON Rivadavia" → está EN esa calle.<br><br>
+        <strong>IN FRONT OF</strong> = imaginate parado en la puerta del edificio A, mirando hacia afuera. Si el edificio B está derecho adelante tuyo, B está "in front of" A.<br><br>
+        <strong>ACROSS FROM / OPPOSITE</strong> = hay una calle o espacio entre los dos edificios, y se miran de frente como dos personas sentadas a una mesa. Siempre hay algo en el medio.<br><br>
+        <strong>NEXT TO</strong> = son vecinos, están uno al lado del otro, casi tocándose.<br><br>
+        <strong>BETWEEN</strong> = siempre necesita DOS cosas. Truco: "BET-WEEN = BET-ween dos amigos". Siempre decís "between A <strong>and</strong> B".<br><br>
+        <strong>DOWN THE STREET</strong> = misma calle, solo que caminás un poco más. No doblás en ninguna esquina.<br><br>
+        <strong>AROUND THE CORNER</strong> = necesitás doblar en la esquina. Está en una calle diferente.<br><br>
+        <strong>NEAR</strong> = cerca pero vago. Puede ser a 10 metros o a 200 metros. Es menos específico que <em>next to</em>.
+      </p>
+    </div>
+
+    <div class="tip">
+      <div class="tip-label">Diferencia clave</div>
+      <p><strong>next to</strong> vs. <strong>near</strong>: "Next to" significa inmediatamente al lado (tocándose o muy cerca). "Near" significa en la zona general pero no necesariamente pegado. La farmacia puede estar <em>near</em> la escuela (misma cuadra, edificio distinto), pero el café está <em>next to</em> la escuela (comparten pared).</p>
+    </div>
+    <div class="tip">
+      <div class="tip-label">Diferencia clave</div>
+      <p><strong>across from</strong> vs. <strong>in front of</strong>: "Across from" siempre significa que hay algo entre los dos (una calle, un espacio) y se miran de frente. "In front of" significa que algo está directamente adelante, generalmente sin nada en el medio.</p>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Ejemplos de la vida real</summary>
+    <div class="example"><div class="example-en">The Obelisk is <strong>on</strong> 9 de Julio Avenue.</div><div class="example-es">El Obelisco está en la Avenida 9 de Julio.</div></div>
+    <div class="example"><div class="example-en">The Colón Theatre is <strong>between</strong> Viamonte and Tucumán streets.</div><div class="example-es">El Teatro Colón está entre las calles Viamonte y Tucumán.</div></div>
+    <div class="example"><div class="example-en">The Abasto Shopping Centre is <strong>next to</strong> a hospital.</div><div class="example-es">El Shopping Abasto está al lado de un hospital.</div></div>
+    <div class="example"><div class="example-en">My grandmother's house is <strong>around the corner</strong> from the square.</div><div class="example-es">La casa de mi abuela está a la vuelta de la esquina de la plaza.</div></div>
+    <div class="example"><div class="example-en">The bank is <strong>opposite</strong> the train station.</div><div class="example-es">El banco está enfrente de la estación de tren.</div></div>
+    <div class="example"><div class="example-en">Lucy is <strong>in front of</strong> the school.</div><div class="example-es">Lucy está delante de la escuela.</div></div>
+    <div class="example"><div class="example-en">Joe is <strong>down the street</strong> from the school.</div><div class="example-es">Joe está más adelante en la calle desde la escuela.</div></div>
+    <div class="example"><div class="example-en">The hospital is <strong>near</strong> the school.</div><div class="example-es">El hospital está cerca de la escuela.</div></div>
+  </details>
+
+  <div class="divider"></div>
+
+  <!-- EX 1 -->
+  <div class="exercise-block" id="ex1">
+    <div class="exercise-header"><span class="exercise-num">Ejercicio 01</span><span class="exercise-type">Completar</span></div>
+    <h4>Completá con la preposición correcta</h4>
+    <p class="ex-instruction">Usá: <strong>next to, between, opposite, on, in front of, down the street, around the corner</strong></p>
+    <div class="ex-item" data-answer="next to"><label><span class="num">1.</span> The bank is __________ the supermarket. <em>(al lado)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="between"><label><span class="num">2.</span> The cinema is __________ the park and the restaurant. <em>(entre)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="on"><label><span class="num">3.</span> The school is __________ San Martín Street. <em>(en)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="opposite"><label><span class="num">4.</span> The hospital is __________ the park. <em>(enfrente)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="around the corner"><label><span class="num">5.</span> The pharmacy is __________ from the bakery. <em>(a la vuelta de la esquina)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="in front of"><label><span class="num">6.</span> The bakery is __________ the square. <em>(delante de)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="down the street"><label><span class="num">7.</span> The bookshop is __________ from the traffic lights. <em>(más adelante en la calle)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem"><button class="btn-check" onclick="checkExercise('ex1')">Verificar</button><button class="btn-reset" onclick="resetExercise('ex1')">Reiniciar</button><div class="score-box" id="score-ex1"></div></div>
+  </div>
+
+  <!-- EX 2 with map -->
+  <div class="exercise-block" id="ex2">
+    <div class="exercise-header"><span class="exercise-num">Ejercicio 02</span><span class="exercise-type">Verdadero / Falso</span></div>
+    <h4>Ocean Street — ¿Verdadero o falso?</h4>
+    <p class="ex-instruction">Mirá el mapa de abajo. Marcá T (true = verdadero) o F (false = falso) según lo que dice cada oración.</p>
+
+    <div class="ocean-map">
+      <div class="map-row">
+        <div class="map-place" style="background:#0d2b1a;border:1px solid #1a4d2e;">Park</div>
+        <div class="map-place" style="background:#1a2040;border:1px solid #2a3565;">Bank</div>
+        <div class="map-place" style="background:#2a1535;border:1px solid #3d2050;">Shopping Centre</div>
+        <div class="map-place" style="background:#1a2d2d;border:1px solid #254545;">Supermarket</div>
+      </div>
+      <div class="map-road"><span>OCEAN STREET →</span></div>
+      <div class="map-row">
+        <div class="map-place" style="background:#2d1515;border:1px solid #452020;">Hospital</div>
+        <div class="map-place" style="background:#15202d;border:1px solid #203045;">Sports Centre</div>
+        <div class="map-place" style="background:#2d2010;border:1px solid #453020;">Cinema</div>
+        <div class="map-place" style="background:#2d2d10;border:1px solid #454520;">Fast Food</div>
+        <div class="map-place" style="background:#2d1520;border:1px solid #452030;">Bar</div>
+      </div>
+    </div>
+
+    <div class="ex-item" data-tf="true"><label><span class="num">1.</span> The fast food restaurant is next to the cinema.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-tf="true"><label><span class="num">2.</span> The bank is next to the shopping centre.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-tf="true"><label><span class="num">3.</span> The hospital is opposite a park.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-tf="true"><label><span class="num">4.</span> The supermarket is next to the shopping centre.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-tf="false"><label><span class="num">5.</span> The bar is between the cinema and the fast food restaurant.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback" data-correction="The bar is NOT between the cinema and the fast food restaurant. It is next to the fast food restaurant."></div></div>
+    <div class="ex-item" data-tf="true"><label><span class="num">6.</span> The sports centre is opposite the bank.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback"></div></div>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem"><button class="btn-check" onclick="checkTFExercise('ex2')">Verificar</button><button class="btn-reset" onclick="resetTFExercise('ex2')">Reiniciar</button><div class="score-box" id="score-ex2"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════════ UNIT 2 ═══════════════ -->
+<section class="section" id="lugares">
+  <div class="section-tag">Unidad 02</div>
+  <h2 class="section-title">Lugares y Actividades en la Ciudad</h2>
+  <p class="section-subtitle">Aprendé los nombres de los lugares comunes y las actividades que se hacen en cada uno. La pregunta clave es: <strong>"Where can you...?"</strong> (¿Dónde podés...?)</p>
+
+  <details open>
+    <summary>Teoría — Vocabulario</summary>
+    <div class="mem-block">
+      <div class="mem-label">Truco para recordar — Agrupá por actividad</div>
+      <p>
+        <strong>Grupo DINERO:</strong> Sacás plata en el <strong>bank</strong> (banco).<br>
+        <strong>Grupo COMIDA:</strong> Comprás comida en el <strong>supermarket</strong> (supermercado), comés en un <strong>restaurant</strong>, comida rápida en un <strong>fast food restaurant</strong>.<br>
+        <strong>Grupo COMPRAS:</strong> Comprás ropa en una <strong>clothes shop</strong> (tienda de ropa), de todo en un <strong>shopping centre</strong> (centro comercial).<br>
+        <strong>Grupo SALUD:</strong> Vas al <strong>hospital</strong> cuando estás enfermo, y a la <strong>pharmacy</strong> (farmacia) por remedios.<br>
+        <strong>Grupo CULTURA:</strong> Ves una peli en el <strong>cinema</strong> (cine), una obra en el <strong>theatre</strong> (teatro), arte en una <strong>art gallery</strong> (galería de arte).<br>
+        <strong>Grupo EDUCACIÓN:</strong> Estudiás en la <strong>school</strong> (escuela), pedís libros en la <strong>library</strong> (biblioteca), comprás útiles en una <strong>stationery shop</strong> (librería).<br>
+        <strong>SERVICIOS:</strong> Enviás cartas en la <strong>post office</strong> (correo), te cortás el pelo en la <strong>hairdresser's</strong> (peluquería), te hospedás en un <strong>hotel</strong>, usás internet en un <strong>internet café</strong> (cibercafé).
+      </p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Lugar</th><th>Actividad</th></tr></thead>
+        <tbody>
+          <tr><td><strong>bank</strong> <span class="trad">banco</span></td><td>get money / change money</td></tr>
+          <tr><td><strong>supermarket</strong> <span class="trad">supermercado</span></td><td>buy food / buy groceries</td></tr>
+          <tr><td><strong>library</strong> <span class="trad">biblioteca</span></td><td>borrow a book / study</td></tr>
+          <tr><td><strong>clothes shop</strong> <span class="trad">tienda de ropa</span></td><td>buy a dress / buy clothes</td></tr>
+          <tr><td><strong>cinema</strong> <span class="trad">cine</span></td><td>see a film / watch a movie</td></tr>
+          <tr><td><strong>theatre</strong> <span class="trad">teatro</span></td><td>see a play</td></tr>
+          <tr><td><strong>pharmacy</strong> <span class="trad">farmacia</span></td><td>buy painkillers / medicine</td></tr>
+          <tr><td><strong>post office</strong> <span class="trad">correo</span></td><td>send mail / send a letter</td></tr>
+          <tr><td><strong>hotel</strong> <span class="trad">hotel</span></td><td>book a room</td></tr>
+          <tr><td><strong>stationery shop</strong> <span class="trad">librería</span></td><td>buy school supplies</td></tr>
+          <tr><td><strong>café</strong> <span class="trad">café</span></td><td>order a coffee</td></tr>
+          <tr><td><strong>shopping centre</strong> <span class="trad">centro comercial</span></td><td>buy clothes, eat, watch films</td></tr>
+          <tr><td><strong>park</strong> <span class="trad">parque / plaza</span></td><td>walk / play / relax</td></tr>
+          <tr><td><strong>sports centre</strong> <span class="trad">centro deportivo</span></td><td>do sport / exercise</td></tr>
+          <tr><td><strong>internet café</strong> <span class="trad">cibercafé</span></td><td>use the internet</td></tr>
+          <tr><td><strong>hairdresser's</strong> <span class="trad">peluquería</span></td><td>get a haircut</td></tr>
+          <tr><td><strong>art gallery</strong> <span class="trad">galería de arte</span></td><td>see an art exhibition</td></tr>
+          <tr><td><strong>hospital</strong> <span class="trad">hospital</span></td><td>see a doctor</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">
+      <div class="tip-label">Patrón para recordar</div>
+      <p>La pregunta siempre es: <strong>"Where can you + verbo...?"</strong><br>La respuesta siempre es: <strong>"At the + lugar."</strong> o <strong>"You can + verbo + at the + lugar."</strong><br><br><em>"Where can you borrow a book?" — "At the library."</em></p>
+    </div>
+    <div class="tip">
+      <div class="tip-label">Dato de ortografía</div>
+      <p>La <strong>'s</strong> en "hairdresser's" viene del nombre completo: "the hairdresser's shop" (la tienda del peluquero). Lo acortamos. Igual con "the baker's" (panadería), "the butcher's" (carnicería).</p>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Ejemplos</summary>
+    <div class="example"><div class="example-en"><strong>"Where can you buy food?"</strong> — <strong>"At the supermarket."</strong></div><div class="example-es">¿Dónde podés comprar comida? — En el supermercado.</div></div>
+    <div class="example"><div class="example-en"><strong>"Where can you see a play?"</strong> — <strong>"At the theatre."</strong></div><div class="example-es">¿Dónde podés ver una obra? — En el teatro.</div></div>
+    <div class="example"><div class="example-en"><strong>"Where can you order a coffee?"</strong> — <strong>"At the café."</strong></div><div class="example-es">¿Dónde podés pedir un café? — En el café.</div></div>
+    <div class="example"><div class="example-en"><strong>"Where can you send mail?"</strong> — <strong>"At the post office."</strong></div><div class="example-es">¿Dónde podés enviar correo? — En el correo.</div></div>
+    <div class="example"><div class="example-en"><strong>"Where can you get money?"</strong> — <strong>"At the bank."</strong></div><div class="example-es">¿Dónde podés sacar dinero? — En el banco.</div></div>
+    <div class="example"><div class="example-en"><strong>"Where can you buy painkillers?"</strong> — <strong>"At the pharmacy."</strong></div><div class="example-es">¿Dónde podés comprar analgésicos? — En la farmacia.</div></div>
+    <div class="example"><div class="example-en"><strong>"Where can you see an art exhibition?"</strong> — <strong>"At the art gallery."</strong></div><div class="example-es">¿Dónde podés ver una exposición? — En la galería de arte.</div></div>
+    <div class="example"><div class="example-en"><strong>"Where can you book a room?"</strong> — <strong>"At the hotel."</strong></div><div class="example-es">¿Dónde podés reservar una habitación? — En el hotel.</div></div>
+  </details>
+
+  <div class="divider"></div>
+
+  <!-- EX 3 -->
+  <div class="exercise-block" id="ex3">
+    <div class="exercise-header"><span class="exercise-num">Ejercicio 03</span><span class="exercise-type">Unir</span></div>
+    <h4>Uní cada actividad con el lugar correcto</h4>
+    <p class="ex-instruction">Elegí el lugar correcto del menú desplegable.</p>
+    <div class="ex-item" data-answer="library"><label><span class="num">1.</span> Where can you borrow a book? <em>(¿Dónde podés pedir prestado un libro?)</em></label><select class="ex-select"><option value="">Elegí...</option><option value="cinema">cinema</option><option value="bank">bank</option><option value="library">library</option><option value="pharmacy">pharmacy</option><option value="stationery shop">stationery shop</option><option value="post office">post office</option></select><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="cinema"><label><span class="num">2.</span> Where can you see a film? <em>(¿Dónde podés ver una película?)</em></label><select class="ex-select"><option value="">Elegí...</option><option value="cinema">cinema</option><option value="bank">bank</option><option value="library">library</option><option value="pharmacy">pharmacy</option><option value="stationery shop">stationery shop</option><option value="post office">post office</option></select><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="pharmacy"><label><span class="num">3.</span> Where can you buy painkillers? <em>(¿Dónde podés comprar analgésicos?)</em></label><select class="ex-select"><option value="">Elegí...</option><option value="cinema">cinema</option><option value="bank">bank</option><option value="library">library</option><option value="pharmacy">pharmacy</option><option value="stationery shop">stationery shop</option><option value="post office">post office</option></select><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="bank"><label><span class="num">4.</span> Where can you get money? <em>(¿Dónde podés sacar plata?)</em></label><select class="ex-select"><option value="">Elegí...</option><option value="cinema">cinema</option><option value="bank">bank</option><option value="library">library</option><option value="pharmacy">pharmacy</option><option value="stationery shop">stationery shop</option><option value="post office">post office</option></select><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="stationery shop"><label><span class="num">5.</span> Where can you buy school supplies? <em>(¿Dónde podés comprar útiles escolares?)</em></label><select class="ex-select"><option value="">Elegí...</option><option value="cinema">cinema</option><option value="bank">bank</option><option value="library">library</option><option value="pharmacy">pharmacy</option><option value="stationery shop">stationery shop</option><option value="post office">post office</option></select><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="post office"><label><span class="num">6.</span> Where can you send a letter? <em>(¿Dónde podés enviar una carta?)</em></label><select class="ex-select"><option value="">Elegí...</option><option value="cinema">cinema</option><option value="bank">bank</option><option value="library">library</option><option value="pharmacy">pharmacy</option><option value="stationery shop">stationery shop</option><option value="post office">post office</option></select><div class="ex-feedback"></div></div>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem"><button class="btn-check" onclick="checkSelectExercise('ex3')">Verificar</button><button class="btn-reset" onclick="resetSelectExercise('ex3')">Reiniciar</button><div class="score-box" id="score-ex3"></div></div>
+  </div>
+
+  <!-- EX 4 -->
+  <div class="exercise-block" id="ex4">
+    <div class="exercise-header"><span class="exercise-num">Ejercicio 04</span><span class="exercise-type">Diálogo</span></div>
+    <h4>Completá el diálogo con el lugar correcto</h4>
+    <p class="ex-instruction">Usá: <strong>pharmacy</strong> (farmacia), <strong>cinema</strong> (cine), <strong>post office</strong> (correo)</p>
+    <div class="ex-item" data-answer="pharmacy"><label><span class="num">1.</span> A: I need to buy some aspirin. Where can I go?<br>B: You can go to the __________.</label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="cinema"><label><span class="num">2.</span> A: I also want to see the new movie.<br>B: Then you can go to the __________.</label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="post office"><label><span class="num">3.</span> A: And I need to send a letter to my grandmother.<br>B: Go to the __________.</label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem"><button class="btn-check" onclick="checkExercise('ex4')">Verificar</button><button class="btn-reset" onclick="resetExercise('ex4')">Reiniciar</button><div class="score-box" id="score-ex4"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════════ UNIT 3 ═══════════════ -->
+<section class="section" id="gramatica">
+  <div class="section-tag">Unidad 03</div>
+  <h2 class="section-title">Uso de <em>A / Some / Any</em></h2>
+  <p class="section-subtitle">Artículos y cuantificadores: palabras chiquitas pero que cambian todo. ¿Cuándo se usa cada uno?</p>
+
+  <details open>
+    <summary>Teoría — Guía completa</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tipo de oración</th><th>Singular contable<br><small>(una cosa)</small></th><th>Plural contable<br><small>(muchas cosas)</small></th><th>Incontable<br><small>(no se puede contar)</small></th></tr></thead>
+        <tbody>
+          <tr><td><strong>Afirmativa (+)</strong></td><td><strong>a / an</strong><br><small>a book, an apple</small></td><td><strong>some</strong><br><small>some books</small></td><td><strong>some</strong><br><small>some water</small></td></tr>
+          <tr><td><strong>Negativa (−)</strong></td><td><strong>not a</strong><br><small>not a book</small></td><td><strong>any</strong><br><small>any books</small></td><td><strong>any</strong><br><small>any water</small></td></tr>
+          <tr><td><strong>Interrogativa (?)</strong></td><td><strong>a / an</strong><br><small>a book?</small></td><td><strong>any</strong><br><small>any books?</small></td><td><strong>any</strong><br><small>any water?</small></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mem-block">
+      <div class="mem-label">Truco para recordar — La regla simple</div>
+      <p>
+        <strong>SOME = oraciones felices.</strong> Cuando la oración es positiva, usamos <em>some</em>. Pensá: "SOMEone está contento, entonces SOME cosas existen."<br><br>
+        <strong>ANY = oraciones negativas o preguntas.</strong> Cuando la oración es negativa o es una pregunta, usamos <em>any</em>. Pensá: "No tengo ANYthing" o "¿Tenés ANYthing?"<br><br>
+        <strong>A / AN = una sola cosa.</strong> Solo para sustantivos contables en singular. UNA banana = <em>a banana</em>. UNA manzana = <em>an apple</em>.
+      </p>
+    </div>
+    <div class="mem-block">
+      <div class="mem-label">Truco para recordar — A vs. AN</div>
+      <p>
+        Usá <strong>A</strong> antes de sonidos de consonante: <strong>a</strong> book, <strong>a</strong> car, <strong>a</strong> university (suena como "iuniversiti", arranca con sonido de consonante).<br><br>
+        Usá <strong>AN</strong> antes de sonidos de vocal: <strong>an</strong> apple, <strong>an</strong> umbrella, <strong>an</strong> hour (la "h" es muda, arranca con vocal).<br><br>
+        <strong>Atajo fácil:</strong> Decí la palabra en voz alta. Si tu boca está "abierta" al empezar, usá AN. Si se cierran los labios o la lengua, usá A.
+      </p>
+    </div>
+    <div class="tip">
+      <div class="tip-label">Excepción — Ofertas corteses</div>
+      <p>Cuando <strong>ofrecés</strong> algo, podés usar <em>some</em> en una pregunta: <em>"Would you like <strong>some</strong> water?"</em> (¿Querés agua?) — Esto es porque estás siendo generoso, no preguntando si existe.</p>
+    </div>
+    <div class="tip">
+      <div class="tip-label">Contable vs. Incontable</div>
+      <p><strong>Contable</strong> = podés contar: 1 book, 2 books, 3 books → usa <em>a / some / any</em>.<br><strong>Incontable</strong> = no podés contar de a uno: water, milk, money, bread, sugar, rice → usa <em>some / any</em> (nunca <em>a</em>).<br><br>No podés decir "a water" ni "a money". Decís <em>"some water"</em> o <em>"some money"</em>.</p>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Ejemplos</summary>
+    <div class="badge">Afirmativas (+)</div>
+    <div class="example"><div class="example-en">She has <strong>a</strong> computer.</div><div class="example-es">Ella tiene una computadora.</div></div>
+    <div class="example"><div class="example-en">I have <strong>some</strong> magazines.</div><div class="example-es">Tengo algunas revistas.</div></div>
+    <div class="example"><div class="example-en">We need <strong>some</strong> milk.</div><div class="example-es">Necesitamos leche.</div></div>
+    <div class="example"><div class="example-en">There is <strong>an</strong> orange on the table.</div><div class="example-es">Hay una naranja en la mesa.</div></div>
+    <div class="badge">Negativas (−)</div>
+    <div class="example"><div class="example-en">She hasn't got <strong>any</strong> flowers.</div><div class="example-es">Ella no tiene flores.</div></div>
+    <div class="example"><div class="example-en">I don't have <strong>any</strong> money.</div><div class="example-es">No tengo dinero.</div></div>
+    <div class="example"><div class="example-en">There isn't <strong>a</strong> park near my house.</div><div class="example-es">No hay un parque cerca de mi casa.</div></div>
+    <div class="badge">Interrogativas (?)</div>
+    <div class="example"><div class="example-en">Have you got <strong>any</strong> pencils?</div><div class="example-es">¿Tenés lápices?</div></div>
+    <div class="example"><div class="example-en">Is there <strong>any</strong> water?</div><div class="example-es">¿Hay agua?</div></div>
+    <div class="example"><div class="example-en">Can I have <strong>some</strong> cake? <em>(ofrecimiento cortés)</em></div><div class="example-es">¿Puedo tener un poco de torta?</div></div>
+  </details>
+
+  <div class="divider"></div>
+
+  <!-- EX 5 -->
+  <div class="exercise-block" id="ex5">
+    <div class="exercise-header"><span class="exercise-num">Ejercicio 05</span><span class="exercise-type">Completar</span></div>
+    <h4>Completá con <strong>a, some</strong> o <strong>any</strong></h4>
+    <div class="ex-item" data-answer="some"><label><span class="num">1.</span> I need __________ milk. <em>(Necesito leche.)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="any"><label><span class="num">2.</span> She hasn't got __________ apples. <em>(Ella no tiene manzanas.)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="a"><label><span class="num">3.</span> He has __________ car. <em>(Él tiene un auto.)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="some"><label><span class="num">4.</span> We have __________ oranges. <em>(Tenemos naranjas.)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="any"><label><span class="num">5.</span> Are there __________ students in the classroom? <em>(¿Hay alumnos en el aula?)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="some"><label><span class="num">6.</span> I want __________ water, please. <em>(Quiero agua, por favor.)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="any"><label><span class="num">7.</span> She doesn't have __________ brothers. <em>(Ella no tiene hermanos.)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="a"><label><span class="num">8.</span> There is __________ banana on the table. <em>(Hay una banana en la mesa.)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="some"><label><span class="num">9.</span> Can I have __________ sugar? <em>(¿Puedo tener azúcar? — ofrecimiento)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="any"><label><span class="num">10.</span> They don't have __________ pets. <em>(Ellos no tienen mascotas.)</em></label><input type="text" class="ex-input" placeholder="Escribí acá..."><div class="ex-feedback"></div></div>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem"><button class="btn-check" onclick="checkExercise('ex5')">Verificar</button><button class="btn-reset" onclick="resetExercise('ex5')">Reiniciar</button><div class="score-box" id="score-ex5"></div></div>
+  </div>
+
+  <!-- EX 6 -->
+  <div class="exercise-block" id="ex6">
+    <div class="exercise-header"><span class="exercise-num">Ejercicio 06</span><span class="exercise-type">Opción múltiple</span></div>
+    <h4>Elegí la opción correcta</h4>
+    <div class="ex-item" data-answer="any"><label><span class="num">1.</span> I don't have ( some / any ) money.</label><select class="ex-select"><option value="">Elegí...</option><option value="some">some</option><option value="any">any</option></select><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="some"><label><span class="num">2.</span> Can I have ( a / some ) bread?</label><select class="ex-select"><option value="">Elegí...</option><option value="a">a</option><option value="some">some</option></select><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="an"><label><span class="num">3.</span> She wants ( an / a ) orange.</label><select class="ex-select"><option value="">Elegí...</option><option value="an">an</option><option value="a">a</option></select><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="some"><label><span class="num">4.</span> There are ( some / any ) chairs in the room.</label><select class="ex-select"><option value="">Elegí...</option><option value="some">some</option><option value="any">any</option></select><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-answer="some"><label><span class="num">5.</span> We need ( any / some ) help.</label><select class="ex-select"><option value="">Elegí...</option><option value="any">any</option><option value="some">some</option></select><div class="ex-feedback"></div></div>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem"><button class="btn-check" onclick="checkSelectExercise('ex6')">Verificar</button><button class="btn-reset" onclick="resetSelectExercise('ex6')">Reiniciar</button><div class="score-box" id="score-ex6"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════════ INTEGRADOR ═══════════════ -->
+<section class="section" id="integrador">
+  <div class="section-tag">Actividad Integradora</div>
+  <h2 class="section-title">Lectura y Comprensión</h2>
+  <p class="section-subtitle">Poné a prueba todo lo aprendido con una lectura que combina preposiciones, lugares y gramática.</p>
+
+  <div class="card">
+    <div class="card-label">Leé con atención</div>
+    <h3>My Neighbourhood</h3>
+    <p style="margin-top:.75rem;line-height:2;">
+      "My neighbourhood is very nice. There is <strong>a supermarket</strong> on Main Street, <strong>next to</strong> the bank. <strong>Across from</strong> the supermarket, there is <strong>a park</strong>. <strong>Between</strong> the bank and the park, there is <strong>a small café</strong>. My school is <strong>around the corner</strong> from the café, on Green Street. <strong>Near</strong> the school, there is <strong>a library</strong> where I can borrow books. Also, there is <strong>a cinema</strong> <strong>opposite</strong> the library. In the library there are <strong>some</strong> computers, but there aren't <strong>any</strong> magazines."
+    </p>
+  </div>
+
+  <!-- EX 7 — all dropdown now -->
+  <div class="exercise-block" id="ex7">
+    <div class="exercise-header"><span class="exercise-num">Ejercicio 07</span><span class="exercise-type">Comprensión lectora</span></div>
+    <h4>Respondé según el texto</h4>
+    <p class="ex-instruction">Elegí la respuesta correcta del menú desplegable usando lo que dice el texto de arriba.</p>
+
+    <div class="ex-item" data-answer="on main street, next to the bank">
+      <label><span class="num">1.</span> Where is the supermarket? <em>(¿Dónde está el supermercado?)</em></label>
+      <select class="ex-select"><option value="">Elegí...</option><option value="on main street, next to the bank">On Main Street, next to the bank</option><option value="on green street, near the library">On Green Street, near the library</option><option value="across from the bank">Across from the bank</option></select>
+      <div class="ex-feedback"></div>
+    </div>
+    <div class="ex-item" data-answer="a park">
+      <label><span class="num">2.</span> What is across from the supermarket? <em>(¿Qué hay enfrente del supermercado?)</em></label>
+      <select class="ex-select"><option value="">Elegí...</option><option value="the bank">The bank</option><option value="a park">A park</option><option value="the library">The library</option></select>
+      <div class="ex-feedback"></div>
+    </div>
+    <div class="ex-item" data-answer="around the corner from the café, on green street">
+      <label><span class="num">3.</span> Where is the school? <em>(¿Dónde está la escuela?)</em></label>
+      <select class="ex-select"><option value="">Elegí...</option><option value="on main street, next to the bank">On Main Street, next to the bank</option><option value="around the corner from the café, on green street">Around the corner from the café, on Green Street</option><option value="opposite the library">Opposite the library</option></select>
+      <div class="ex-feedback"></div>
+    </div>
+    <div class="ex-item" data-answer="borrow books">
+      <label><span class="num">4.</span> What can you do at the library? <em>(¿Qué podés hacer en la biblioteca?)</em></label>
+      <select class="ex-select"><option value="">Elegí...</option><option value="see a film">See a film</option><option value="borrow books">Borrow books</option><option value="buy food">Buy food</option></select>
+      <div class="ex-feedback"></div>
+    </div>
+    <div class="ex-item" data-answer="opposite">
+      <label><span class="num">5.</span> The cinema is __________ the library. <em>(next to = al lado / opposite = enfrente / between = entre)</em></label>
+      <select class="ex-select"><option value="">Elegí...</option><option value="next to">next to</option><option value="opposite">opposite</option><option value="between">between</option></select>
+      <div class="ex-feedback"></div>
+    </div>
+    <div class="ex-item" data-answer="no, there aren't any magazines">
+      <label><span class="num">6.</span> Are there any magazines in the library? <em>(¿Hay revistas en la biblioteca?)</em></label>
+      <select class="ex-select"><option value="">Elegí...</option><option value="yes, there are some magazines">Yes, there are some magazines</option><option value="no, there aren't any magazines">No, there aren't any magazines</option><option value="yes, there are a lot of magazines">Yes, there are a lot of magazines</option></select>
+      <div class="ex-feedback"></div>
+    </div>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem"><button class="btn-check" onclick="checkSelectExercise('ex7')">Verificar</button><button class="btn-reset" onclick="resetSelectExercise('ex7')">Reiniciar</button><div class="score-box" id="score-ex7"></div></div>
+  </div>
+
+  <!-- EX 8 T/F -->
+  <div class="exercise-block" id="ex8">
+    <div class="exercise-header"><span class="exercise-num">Ejercicio 08</span><span class="exercise-type">Verdadero / Falso</span></div>
+    <h4>Según el texto — ¿Verdadero o falso?</h4>
+    <p class="ex-instruction">Usá el mismo texto de "My Neighbourhood" de arriba para responder.</p>
+    <div class="ex-item" data-tf="true"><label><span class="num">1.</span> The supermarket is next to the bank.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-tf="true"><label><span class="num">2.</span> The park is across from the supermarket.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-tf="false"><label><span class="num">3.</span> The school is on Main Street.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback" data-correction="The school is on Green Street."></div></div>
+    <div class="ex-item" data-tf="true"><label><span class="num">4.</span> The café is between the bank and the park.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback"></div></div>
+    <div class="ex-item" data-tf="false"><label><span class="num">5.</span> The cinema is opposite the school.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback" data-correction="The cinema is opposite the library, not the school."></div></div>
+    <div class="ex-item" data-tf="true"><label><span class="num">6.</span> There are some computers in the library.</label><div class="tf-options"><button class="tf-btn" onclick="selectTF(this,true)" data-val="true">T</button><button class="tf-btn" onclick="selectTF(this,false)" data-val="false">F</button></div><div class="ex-feedback"></div></div>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem"><button class="btn-check" onclick="checkTFExercise('ex8')">Verificar</button><button class="btn-reset" onclick="resetTFExercise('ex8')">Reiniciar</button><div class="score-box" id="score-ex8"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════════ AUTOEVAL ═══════════════ -->
+<section class="section" id="autoeval">
+  <div class="section-tag">Autoevaluación</div>
+  <h2 class="section-title">Tu Progreso</h2>
+  <p class="section-subtitle">Hacé los ejercicios de arriba y revisá tu progreso acá. Cada ejercicio completado al 100% suma a tu barra.</p>
+  <div class="card">
+    <div class="card-label">Barra de progreso</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;">
+      <span style="font-size:.85rem;">Ejercicios completados</span>
+      <span id="progress-text" style="font-family:var(--font-mono);font-size:.8rem;color:var(--accent);">0 / 8</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+  <div class="card">
+    <div class="card-label">Checklist</div>
+    <ul style="list-style:none;padding:0">
+      <li style="padding:.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem"><span class="ci" id="ch1" style="width:20px;height:20px;border:2px solid var(--border);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .3s;flex-shrink:0"></span><span style="font-size:.88rem">Preposiciones — Completar (Ej 1)</span></li>
+      <li style="padding:.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem"><span class="ci" id="ch2" style="width:20px;height:20px;border:2px solid var(--border);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .3s;flex-shrink:0"></span><span style="font-size:.88rem">V/F — Ocean Street (Ej 2)</span></li>
+      <li style="padding:.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem"><span class="ci" id="ch3" style="width:20px;height:20px;border:2px solid var(--border);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .3s;flex-shrink:0"></span><span style="font-size:.88rem">Lugares — Unir (Ej 3)</span></li>
+      <li style="padding:.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem"><span class="ci" id="ch4" style="width:20px;height:20px;border:2px solid var(--border);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .3s;flex-shrink:0"></span><span style="font-size:.88rem">Diálogo (Ej 4)</span></li>
+      <li style="padding:.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem"><span class="ci" id="ch5" style="width:20px;height:20px;border:2px solid var(--border);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .3s;flex-shrink:0"></span><span style="font-size:.88rem">A / Some / Any — Completar (Ej 5)</span></li>
+      <li style="padding:.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem"><span class="ci" id="ch6" style="width:20px;height:20px;border:2px solid var(--border);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .3s;flex-shrink:0"></span><span style="font-size:.88rem">A / Some / Any — Opción múltiple (Ej 6)</span></li>
+      <li style="padding:.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem"><span class="ci" id="ch7" style="width:20px;height:20px;border:2px solid var(--border);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .3s;flex-shrink:0"></span><span style="font-size:.88rem">Comprensión lectora (Ej 7)</span></li>
+      <li style="padding:.5rem 0;display:flex;align-items:center;gap:.75rem"><span class="ci" id="ch8" style="width:20px;height:20px;border:2px solid var(--border);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .3s;flex-shrink:0"></span><span style="font-size:.88rem">V/F — Lectura (Ej 8)</span></li>
+    </ul>
+  </div>
+  <div class="tip">
+    <div class="tip-label">Consejo de estudio</div>
+    <p>Leé la teoría antes de hacer los ejercicios. Si te equivocás, no pasa nada: revisá la respuesta y tratá de entender <strong>por qué</strong>. Practicá todos los días, aunque sea 10 minutos, y vas a mejorar rápido.</p>
+  </div>
+</section>
+
+<footer class="footer"><p>English 2do Año — Guía de Estudio Interactiva</p></footer>
+</main>
+
+<script>
+const done=new Set();
+function goTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active')}
+const sids=['preposiciones','lugares','gramatica','integrador','autoeval'];
+const nbs=document.querySelectorAll('.nav-btn');
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const i=sids.indexOf(x.target.id);nbs.forEach(b=>b.classList.remove('active'));if(i>=0)nbs[i].classList.add('active')}})},{rootMargin:'-80px 0px -60% 0px',threshold:0});
+document.querySelectorAll('.section').forEach(s=>obs.observe(s));
+
+function checkExercise(id){const b=document.getElementById(id),items=b.querySelectorAll('.ex-item');let c=0;items.forEach(it=>{const a=it.dataset.answer.toLowerCase().trim(),inp=it.querySelector('.ex-input'),fb=it.querySelector('.ex-feedback'),u=inp.value.toLowerCase().trim();it.classList.remove('correct','incorrect');if(u===a){it.classList.add('correct');fb.textContent='¡Correcto!';fb.className='ex-feedback show-correct';c++}else{it.classList.add('incorrect');fb.textContent='Respuesta: '+it.dataset.answer;fb.className='ex-feedback show-incorrect'}});showScore(id,c,items.length);markDone(id,c,items.length)}
+function resetExercise(id){const b=document.getElementById(id);b.querySelectorAll('.ex-item').forEach(it=>{it.classList.remove('correct','incorrect');const i=it.querySelector('.ex-input');if(i)i.value='';const f=it.querySelector('.ex-feedback');f.textContent='';f.className='ex-feedback'});document.getElementById('score-'+id).classList.remove('visible')}
+function checkSelectExercise(id){const b=document.getElementById(id),items=b.querySelectorAll('.ex-item');let c=0;items.forEach(it=>{const a=it.dataset.answer.toLowerCase().trim(),s=it.querySelector('.ex-select'),fb=it.querySelector('.ex-feedback'),u=s.value.toLowerCase().trim();it.classList.remove('correct','incorrect');if(u===a){it.classList.add('correct');fb.textContent='¡Correcto!';fb.className='ex-feedback show-correct';c++}else{it.classList.add('incorrect');fb.textContent='Respuesta: '+it.dataset.answer;fb.className='ex-feedback show-incorrect'}});showScore(id,c,items.length);markDone(id,c,items.length)}
+function resetSelectExercise(id){const b=document.getElementById(id);b.querySelectorAll('.ex-item').forEach(it=>{it.classList.remove('correct','incorrect');const s=it.querySelector('.ex-select');if(s)s.selectedIndex=0;const f=it.querySelector('.ex-feedback');f.textContent='';f.className='ex-feedback'});document.getElementById('score-'+id).classList.remove('visible')}
+function selectTF(btn,v){const c=btn.closest('.ex-item');c.querySelectorAll('.tf-btn').forEach(b=>{b.classList.remove('selected-true','selected-false');b.dataset.selected=''});btn.dataset.selected='true';btn.classList.add(v?'selected-true':'selected-false')}
+function checkTFExercise(id){const b=document.getElementById(id),items=b.querySelectorAll('.ex-item');let c=0;items.forEach(it=>{const exp=it.dataset.tf==='true',fb=it.querySelector('.ex-feedback'),sel=it.querySelector('.tf-btn[data-selected="true"]');it.classList.remove('correct','incorrect');if(!sel){it.classList.add('incorrect');fb.textContent='Elegí T o F';fb.className='ex-feedback show-incorrect';return}const u=sel.dataset.val==='true';if(u===exp){it.classList.add('correct');fb.textContent='¡Correcto!';fb.className='ex-feedback show-correct';c++}else{it.classList.add('incorrect');const cor=fb.dataset.correction;fb.textContent=cor?'Falso. '+cor:'Incorrecto. La respuesta es: '+(exp?'T':'F');fb.className='ex-feedback show-incorrect'}});showScore(id,c,items.length);markDone(id,c,items.length)}
+function resetTFExercise(id){const b=document.getElementById(id);b.querySelectorAll('.ex-item').forEach(it=>{it.classList.remove('correct','incorrect');it.querySelectorAll('.tf-btn').forEach(bt=>{bt.classList.remove('selected-true','selected-false');bt.dataset.selected=''});const f=it.querySelector('.ex-feedback');f.textContent='';f.className='ex-feedback'});document.getElementById('score-'+id).classList.remove('visible')}
+function showScore(id,c,t){const s=document.getElementById('score-'+id);s.textContent=c+' / '+t+' ('+Math.round(c/t*100)+'%)';s.classList.add('visible')}
+function markDone(id,c,t){const n=parseInt(id.replace('ex',''));if(c===t)done.add(n);else done.delete(n);updateProg()}
+function updateProg(){const t=8,d=done.size,p=Math.round(d/t*100);document.getElementById('progress-text').textContent=d+' / '+t;document.getElementById('progress-fill').style.width=p+'%';for(let i=1;i<=t;i++){const ic=document.getElementById('ch'+i);if(done.has(i)){ic.textContent='✓';ic.style.borderColor='var(--success)';ic.style.color='var(--success)';ic.style.background='var(--success-bg)'}else{ic.textContent='';ic.style.borderColor='var(--border)';ic.style.color='transparent';ic.style.background='none'}}}
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.classList.contains('ex-input')){const b=e.target.closest('.exercise-block');if(b){const bt=b.querySelector('.btn-check');if(bt)bt.click()}}});
+</script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicios de Inglés – 2do Año</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e1a;--sf:#121829;--cd:#182038;--ac:#f0b429;--ag:#f0b42944;--as:#f0b42918;--t1:#f0ece4;--t2:#b0bfcf;--tm:#6b829e;--ok:#4ade80;--okb:#4ade8014;--er:#f87171;--erb:#f8717114;--bd:#1e3a5f;--r:14px;--rs:10px;--fd:'Bebas Neue',sans-serif;--fb:'Lora',serif;--fm:'DM Mono',monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--t1);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+
+.top{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);border-bottom:1px solid var(--bd);padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.top h1{font-family:var(--fd);font-size:1.25rem;letter-spacing:.06em}.top h1 em{color:var(--ac);font-style:normal}
+.top-r{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.pill{font-family:var(--fm);font-size:.62rem;letter-spacing:.06em;color:var(--ac);background:var(--as);border:1px solid var(--ag);border-radius:20px;padding:.25rem .6rem;white-space:nowrap}
+.pbar{width:70px;height:4px;background:var(--sf);border-radius:2px;overflow:hidden}
+.pbar-f{height:100%;background:var(--ac);border-radius:2px;transition:width .5s;width:0}
+
+.wrap{max-width:680px;margin:0 auto;padding:0 1rem 5rem;position:relative;z-index:1}
+.screen{display:none;animation:fadeUp .35s ease both}
+.screen.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* MENU */
+.m-hero{text-align:center;padding:2.5rem 0 2rem}
+.m-hero h2{font-family:var(--fd);font-size:clamp(2rem,7vw,3.2rem);letter-spacing:.06em;margin-bottom:.3rem}
+.m-hero h2 em{color:var(--ac);font-style:normal}
+.m-hero p{font-family:var(--fm);font-size:.72rem;color:var(--tm);letter-spacing:.12em}
+.mc{background:var(--cd);border:1px solid var(--bd);border-radius:var(--r);padding:1rem;cursor:pointer;transition:border-color .3s,transform .15s;display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.65rem}
+.mc:hover{border-color:var(--ag);transform:translateY(-2px)}
+.mc:active{transform:translateY(0)}
+.mc-i{font-size:1.5rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--as);border-radius:10px;flex-shrink:0}
+.mc-b{flex:1;min-width:0}
+.mc-t{font-family:var(--fd);font-size:1.1rem;letter-spacing:.03em;margin-bottom:.1rem}
+.mc-d{font-size:.78rem;color:var(--t2);margin-bottom:.25rem;line-height:1.45}
+.mc-m{font-family:var(--fm);font-size:.58rem;color:var(--tm);letter-spacing:.08em}
+.mc-a{font-family:var(--fd);font-size:1.3rem;color:var(--ac);flex-shrink:0;align-self:center}
+
+/* EXERCISE SCREENS */
+.ex-top{position:sticky;top:0;z-index:50;background:rgba(10,14,26,.92);border-bottom:1px solid var(--bd);padding:.55rem 1rem;display:flex;align-items:center;gap:.75rem;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.bk{font-family:var(--fm);font-size:.72rem;color:var(--ac);background:none;border:1px solid var(--bd);border-radius:8px;padding:.35rem .75rem;cursor:pointer;white-space:nowrap}
+.bk:hover{border-color:var(--ac)}
+.ex-top-t{font-family:var(--fd);font-size:1.05rem;letter-spacing:.04em}
+.cx{background:var(--cd);border:1px solid var(--bd);border-radius:var(--r);padding:1.15rem;margin-bottom:.85rem}
+.cx h3{font-family:var(--fd);font-size:1.2rem;letter-spacing:.03em;margin-bottom:.3rem}
+.cx p.inst{font-size:.82rem;color:var(--t2);margin-bottom:.85rem;line-height:1.6}
+.it{margin-bottom:.75rem;padding:.85rem;background:var(--sf);border-radius:var(--rs);border:2px solid transparent;transition:border-color .3s,background .3s}
+.it.ok{border-color:var(--ok);background:var(--okb)}.it.err{border-color:var(--er);background:var(--erb)}
+.it label{display:block;font-size:.85rem;color:var(--t1);margin-bottom:.45rem;line-height:1.55}
+.it label .n{font-family:var(--fm);font-size:.6rem;color:var(--ac);margin-right:.35rem}
+.sel{font-family:var(--fm);font-size:.82rem;color:var(--t1);background:var(--bg);border:1px solid var(--bd);border-radius:var(--rs);padding:.55rem .8rem;width:100%;outline:none;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b829e' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .7rem center;padding-right:2rem}
+.sel:focus{border-color:var(--ac)}.sel option{background:var(--sf);color:var(--t1)}
+.inp{font-family:var(--fm);font-size:.82rem;color:var(--t1);background:var(--bg);border:1px solid var(--bd);border-radius:var(--rs);padding:.55rem .8rem;width:100%;outline:none;transition:border-color .2s}
+.inp:focus{border-color:var(--ac)}.inp::placeholder{color:var(--tm)}
+.fb{margin-top:.45rem;border-radius:var(--rs);padding:.7rem .85rem;font-size:.78rem;line-height:1.6;display:none}
+.fb.show{display:block}
+.fb.ok-fb{background:#0d2b1a;border:1px solid #1a4d2e;color:#b0d4c0}
+.fb.err-fb{background:#2b0d0d;border:1px solid #4d1a1a;color:#d4b0b0}
+.fb strong{color:var(--t1)}
+.fb .fl{font-family:var(--fm);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:.25rem}
+.fb .fl.ok-l{color:var(--ok)}.fb .fl.er-l{color:var(--er)}
+
+.tf-row{display:flex;gap:.4rem;margin-top:.35rem}
+.tf{font-family:var(--fm);font-size:.72rem;letter-spacing:.06em;padding:.38rem 1rem;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--t2);cursor:pointer;transition:all .2s;min-width:44px;text-align:center}
+.tf:hover{border-color:var(--ac);color:var(--ac)}
+.tf.st{border-color:var(--ok);color:var(--ok);background:var(--okb)}.tf.sf{border-color:var(--er);color:var(--er);background:var(--erb)}
+
+.btns{display:flex;align-items:center;flex-wrap:wrap;gap:.45rem;margin-top:.75rem}
+.btn-c{font-family:var(--fd);font-size:1rem;letter-spacing:.1em;color:var(--bg);background:var(--ac);border:none;border-radius:var(--rs);padding:.65rem 1.6rem;cursor:pointer;transition:transform .15s,box-shadow .3s}
+.btn-c:hover{transform:translateY(-1px);box-shadow:0 4px 18px var(--ag)}
+.btn-r{font-family:var(--fm);font-size:.68rem;color:var(--tm);background:none;border:1px solid var(--bd);border-radius:var(--rs);padding:.45rem 1rem;cursor:pointer;transition:border-color .2s,color .2s}
+.btn-r:hover{border-color:var(--tm);color:var(--t2)}
+.sc{font-family:var(--fm);font-size:.7rem;color:var(--ac);background:var(--as);border:1px solid var(--ag);border-radius:var(--rs);padding:.4rem .85rem;opacity:0;transition:opacity .3s}.sc.vis{opacity:1}
+
+/* SCRAMBLE */
+.sc-tgt{display:flex;flex-wrap:wrap;gap:.3rem;min-height:48px;padding:.5rem;background:var(--bg);border:2px dashed var(--bd);border-radius:var(--rs);margin-bottom:.6rem;transition:border-color .3s}
+.sc-tgt.has-words{border-color:var(--ag)}
+.sc-w{font-family:var(--fm);font-size:.82rem;color:var(--t1);background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:.45rem .8rem;cursor:pointer;min-height:38px;display:inline-flex;align-items:center;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent}
+.sc-w:hover{border-color:var(--ac);color:var(--ac)}
+.sc-w:active{transform:scale(.95)}
+.sc-ch{font-family:var(--fm);font-size:.82rem;color:var(--ac);background:var(--as);border:1px solid var(--ag);border-radius:8px;padding:.4rem .75rem;cursor:pointer;transition:all .2s;user-select:none}
+.sc-ch:hover{background:var(--ag)}
+.sc-ch:active{transform:scale(.95)}
+
+/* MAP */
+.map-wrap{background:var(--sf);border:1px solid var(--bd);border-radius:var(--rs);overflow:auto;-webkit-overflow-scrolling:touch;margin-bottom:1rem}
+.map-wrap svg{display:block;width:100%;height:auto}
+
+/* MINI MAPS */
+.mm-wrap{display:flex;justify-content:center;margin-bottom:.6rem}
+.mm-wrap svg{width:220px;height:auto;max-width:100%}
+
+.foot{text-align:center;padding:2rem 1rem;border-top:1px solid var(--bd);margin-top:1.5rem}
+.foot p{font-family:var(--fm);font-size:.65rem;color:var(--tm);letter-spacing:.07em}
+
+@media(min-width:600px){
+  .wrap{padding:0 1.75rem 5rem}
+  .mc{padding:1.15rem 1.4rem}
+  .sel,.inp{max-width:380px}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>EXERCISES <em>2do</em></h1>
+  <div class="top-r">
+    <div class="pbar"><div class="pbar-f" id="pf"></div></div>
+    <div class="pill" id="pp">0 / 6</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════ MENU ═══════════ -->
+<div class="screen active" id="menu">
+  <div class="m-hero">
+    <h2>EJERCICIOS <em>INTERACTIVOS</em></h2>
+    <p>Elegí un ejercicio para comenzar</p>
+  </div>
+  <div class="mc" onclick="openEx(1)"><div class="mc-i">🗺️</div><div class="mc-b"><div class="mc-t">Map Detective</div><div class="mc-d">Observá el mapa del barrio y respondé preguntas sobre la ubicación de cada lugar.</div><div class="mc-m">6 PREGUNTAS · OBSERVACIÓN</div></div><div class="mc-a">›</div></div>
+  <div class="mc" onclick="openEx(2)"><div class="mc-i">🔀</div><div class="mc-b"><div class="mc-t">Sentence Scramble</div><div class="mc-d">Tocá las palabras en el orden correcto para armar cada oración.</div><div class="mc-m">5 ORACIONES · CONSTRUCCIÓN</div></div><div class="mc-a">›</div></div>
+  <div class="mc" onclick="openEx(3)"><div class="mc-i">🔍</div><div class="mc-b"><div class="mc-t">Error Hunter</div><div class="mc-d">Cada oración tiene un error. Elegí la versión corregida.</div><div class="mc-m">5 ORACIONES · CORRECCIÓN</div></div><div class="mc-a">›</div></div>
+  <div class="mc" onclick="openEx(4)"><div class="mc-i">💬</div><div class="mc-b"><div class="mc-t">What Would You Say?</div><div class="mc-d">Leé la situación y elegí la respuesta más apropiada en inglés.</div><div class="mc-m">5 SITUACIONES · COMUNICACIÓN</div></div><div class="mc-a">›</div></div>
+  <div class="mc" onclick="openEx(5)"><div class="mc-i">🧭</div><div class="mc-b"><div class="mc-t">Visual Prepositions</div><div class="mc-d">Mirá cada dibujo y elegí la preposición que describe la relación.</div><div class="mc-m">5 ESCENAS · VISUAL</div></div><div class="mc-a">›</div></div>
+  <div class="mc" onclick="openEx(6)"><div class="mc-i">🔄</div><div class="mc-b"><div class="mc-t">Transform It!</div><div class="mc-d">Convertí cada oración afirmativa a negativa o a pregunta.</div><div class="mc-m">5 ORACIONES · GRAMÁTICA</div></div><div class="mc-a">›</div></div>
+</div>
+
+<!-- ═══════════ EX 1: MAP DETECTIVE ═══════════ -->
+<div class="screen" id="ex1">
+  <div class="ex-top"><button class="bk" onclick="goMenu()">← Volver</button><span class="ex-top-t">Map Detective</span></div>
+  <div style="padding-top:1.25rem"></div>
+  <div class="cx">
+    <h3>Observá el mapa y respondé</h3>
+    <p class="inst">Estudiá bien el mapa del barrio antes de responder. Prestá atención a qué lugar está <em>next to</em>, <em>opposite</em>, <em>between</em> o <em>near</em> cuál.</p>
+    <div class="map-wrap">
+      <svg viewBox="0 0 460 290" style="display:block;width:100%;height:auto">
+        <rect width="460" height="290" fill="#0b1525" rx="0"/>
+        <rect x="0" y="88" width="460" height="14" fill="#152030"/><text x="230" y="98" text-anchor="middle" fill="#3a5570" font-size="5.5" font-family="'DM Mono',monospace" letter-spacing="2.5">RIVER ROAD</text>
+        <rect x="0" y="188" width="460" height="14" fill="#152030"/><text x="230" y="198" text-anchor="middle" fill="#3a5570" font-size="5.5" font-family="'DM Mono',monospace" letter-spacing="2.5">OAK AVENUE</text>
+        <rect x="147" y="0" width="12" height="290" fill="#152030"/><text x="153" y="284" text-anchor="middle" fill="#3a5570" font-size="4.5" font-family="'DM Mono',monospace" transform="rotate(-90,153,284)" letter-spacing="1.5">PARK LANE</text>
+        <rect x="307" y="0" width="12" height="290" fill="#152030"/><text x="313" y="284" text-anchor="middle" fill="#3a5570" font-size="4.5" font-family="'DM Mono',monospace" transform="rotate(-90,313,284)" letter-spacing="1.5">MAIN ST</text>
+        <rect x="4" y="4" width="137" height="78" rx="5" fill="#0d2818" stroke="#1a4d2e" stroke-width=".7"/>
+        <circle cx="22" cy="28" r="10" fill="#165c30" opacity=".65"/><circle cx="48" cy="20" r="12" fill="#1a6b3a" opacity=".6"/><circle cx="74" cy="30" r="9" fill="#165c30" opacity=".65"/><circle cx="98" cy="18" r="11" fill="#1a6b3a" opacity=".6"/><circle cx="120" cy="32" r="8" fill="#165c30" opacity=".65"/>
+        <text x="72" y="58" text-anchor="middle" fill="#60b080" font-size="10" font-family="'DM Mono',monospace" font-weight="500">PARK</text>
+        <rect x="165" y="4" width="136" height="78" rx="5" fill="#1a1535" stroke="#2d2060" stroke-width=".7"/>
+        <rect x="180" y="16" width="10" height="14" fill="#2d2060" rx="1"/><rect x="196" y="16" width="10" height="14" fill="#2d2060" rx="1"/><rect x="212" y="16" width="10" height="14" fill="#2d2060" rx="1"/>
+        <rect x="248" y="14" width="36" height="20" fill="#2d2060" rx="2"/>
+        <text x="233" y="58" text-anchor="middle" fill="#9080c0" font-size="10" font-family="'DM Mono',monospace" font-weight="500">LIBRARY</text>
+        <text x="233" y="70" text-anchor="middle" fill="#9080c055" font-size="7">📚</text>
+        <rect x="325" y="4" width="130" height="78" rx="5" fill="#2d1518" stroke="#552025" stroke-width=".7"/>
+        <rect x="380" y="18" width="16" height="5" fill="#e05060" rx="1"/><rect x="385.5" y="13" width="5" height="15" fill="#e05060" rx="1"/>
+        <text x="390" y="58" text-anchor="middle" fill="#d08090" font-size="10" font-family="'DM Mono',monospace" font-weight="500">HOSPITAL</text>
+        <rect x="4" y="108" width="137" height="74" rx="5" fill="#141e38" stroke="#253560" stroke-width=".7"/>
+        <rect x="20" y="120" width="5" height="32" fill="#2a4070" rx="1"/><rect x="38" y="120" width="5" height="32" fill="#2a4070" rx="1"/><rect x="56" y="120" width="5" height="32" fill="#2a4070" rx="1"/><rect x="74" y="120" width="5" height="32" fill="#2a4070" rx="1"/><rect x="92" y="120" width="5" height="32" fill="#2a4070" rx="1"/><rect x="110" y="120" width="5" height="32" fill="#2a4070" rx="1"/>
+        <text x="72" y="170" text-anchor="middle" fill="#6888cc" font-size="10" font-family="'DM Mono',monospace" font-weight="500">BANK</text>
+        <rect x="165" y="108" width="136" height="74" rx="5" fill="#201a10" stroke="#3a3020" stroke-width=".7"/>
+        <circle cx="233" cy="138" r="16" fill="#152840" stroke="#2050a0" stroke-width=".5"/><circle cx="233" cy="138" r="5" fill="#2070b0" opacity=".5"/>
+        <text x="233" y="170" text-anchor="middle" fill="#c0a850" font-size="10" font-family="'DM Mono',monospace" font-weight="500">PLAZA</text>
+        <rect x="325" y="108" width="130" height="74" rx="5" fill="#281e0a" stroke="#4a3510" stroke-width=".7"/>
+        <rect x="340" y="120" width="8" height="8" fill="#3a2d10" rx="1"/><rect x="354" y="120" width="8" height="8" fill="#3a2d10" rx="1"/><rect x="368" y="120" width="8" height="8" fill="#3a2d10" rx="1"/><rect x="382" y="120" width="8" height="8" fill="#3a2d10" rx="1"/><rect x="396" y="120" width="8" height="8" fill="#3a2d10" rx="1"/>
+        <rect x="340" y="134" width="8" height="8" fill="#3a2d10" rx="1"/><rect x="354" y="134" width="8" height="8" fill="#3a2d10" rx="1"/><rect x="368" y="134" width="8" height="8" fill="#3a2d10" rx="1"/><rect x="382" y="134" width="8" height="8" fill="#3a2d10" rx="1"/><rect x="396" y="134" width="8" height="8" fill="#3a2d10" rx="1"/>
+        <text x="390" y="170" text-anchor="middle" fill="#d0a840" font-size="10" font-family="'DM Mono',monospace" font-weight="500">HOTEL</text>
+        <rect x="4" y="208" width="137" height="74" rx="5" fill="#151525" stroke="#252540" stroke-width=".7"/>
+        <rect x="38" y="220" width="56" height="7" fill="#252540" rx="2"/><rect x="42" y="221" width="5" height="5" fill="#151525"/><rect x="51" y="221" width="5" height="5" fill="#151525"/><rect x="60" y="221" width="5" height="5" fill="#151525"/><rect x="69" y="221" width="5" height="5" fill="#151525"/><rect x="78" y="221" width="5" height="5" fill="#151525"/>
+        <text x="72" y="268" text-anchor="middle" fill="#8080c0" font-size="10" font-family="'DM Mono',monospace" font-weight="500">CINEMA</text>
+        <rect x="165" y="208" width="136" height="74" rx="5" fill="#251a0a" stroke="#3d2810" stroke-width=".7"/>
+        <rect x="218" y="222" width="14" height="10" fill="#3d2810" rx="2"/><path d="M232,225 Q240,228 232,231" fill="none" stroke="#3d2810" stroke-width="1.2"/>
+        <text x="233" y="268" text-anchor="middle" fill="#c09050" font-size="10" font-family="'DM Mono',monospace" font-weight="500">CAFÉ</text>
+        <rect x="325" y="208" width="130" height="74" rx="5" fill="#0a1a1a" stroke="#153030" stroke-width=".7"/>
+        <circle cx="378" cy="232" r="4" fill="none" stroke="#1a4040" stroke-width="1"/><circle cx="396" cy="232" r="4" fill="none" stroke="#1a4040" stroke-width="1"/><path d="M370,224 L374,230 L402,230 L398,224 Z" fill="none" stroke="#1a4040" stroke-width="1"/>
+        <text x="390" y="268" text-anchor="middle" fill="#50b0b0" font-size="9" font-family="'DM Mono',monospace" font-weight="500">SUPERMARKET</text>
+        <g transform="translate(444,14)"><circle r="10" fill="none" stroke="#2a4060" stroke-width=".5"/><text y="-3" text-anchor="middle" fill="#f0b429" font-size="7" font-family="'DM Mono',monospace" font-weight="bold">N</text></g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="cx" id="e1">
+    <div class="it" data-a="between park and hospital" data-why="En la fila superior del mapa, la LIBRARY está en el medio entre el PARK (izquierda) y el HOSPITAL (derecha). Cuando algo está en medio de dos cosas, usamos &quot;between A and B&quot;.">
+      <label><span class="n">1.</span> The LIBRARY is between __________.</label>
+      <select class="sel"><option value="">Elegí...</option><option value="between park and hospital">Park and Hospital</option><option value="between bank and hotel">Bank and Hotel</option><option value="between cinema and supermarket">Cinema and Supermarket</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="opposite" data-why="El BANK y el PARK están en la misma columna pero separados por River Road (la calle horizontal de arriba). Cuando dos edificios están uno frente al otro con una calle en el medio, usamos &quot;opposite&quot;.">
+      <label><span class="n">2.</span> The BANK is __________ the PARK.</label>
+      <select class="sel"><option value="">Elegí...</option><option value="next to">next to</option><option value="opposite">opposite</option><option value="between">between</option><option value="near">near</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="between bank and hotel" data-why="En la fila del medio, la PLAZA está entre el BANK (izquierda) y el HOTEL (derecha). Es el edificio central de esa fila.">
+      <label><span class="n">3.</span> The PLAZA is between __________.</label>
+      <select class="sel"><option value="">Elegí...</option><option value="between park and hospital">Park and Hospital</option><option value="between bank and hotel">Bank and Hotel</option><option value="between library and cinema">Library and Cinema</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="next to" data-why="El CINEMA y el CAFÉ están en la misma fila (abajo), uno al lado del otro, sin nada en medio. &quot;Next to&quot; = inmediatamente al lado.">
+      <label><span class="n">4.</span> The CINEMA is __________ the CAFÉ.</label>
+      <select class="sel"><option value="">Elegí...</option><option value="next to">next to</option><option value="opposite">opposite</option><option value="between">between</option><option value="across from">across from</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="opposite" data-why="El HOTEL (fila del medio, derecha) y el SUPERMARKET (fila de abajo, derecha) están en la misma columna, separados por Oak Avenue. &quot;Opposite&quot; = al otro lado de la calle.">
+      <label><span class="n">5.</span> The HOTEL is __________ the SUPERMARKET.</label>
+      <select class="sel"><option value="">Elegí...</option><option value="next to">next to</option><option value="opposite">opposite</option><option value="between">between</option><option value="near">near</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="near" data-why="El PARK (arriba, izquierda) y el CINEMA (abajo, izquierda) están en la misma columna pero separados por dos cuadras. No son &quot;opposite&quot; (no están directamente frente a frente) ni &quot;next to&quot;. Están relativamente cerca en la misma zona, así que &quot;near&quot; es la mejor opción.">
+      <label><span class="n">6.</span> The PARK is __________ the CINEMA.</label>
+      <select class="sel"><option value="">Elegí...</option><option value="next to">next to</option><option value="opposite">opposite</option><option value="between">between</option><option value="near">near</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="btns"><button class="btn-c" onclick="check('e1')">Verificar</button><button class="btn-r" onclick="reset_('e1')">Reiniciar</button><div class="sc" id="sc-e1"></div></div>
+  </div>
+</div>
+
+<!-- ═══════════ EX 2: SCRAMBLE ═══════════ -->
+<div class="screen" id="ex2">
+  <div class="ex-top"><button class="bk" onclick="goMenu()">← Volver</button><span class="ex-top-t">Sentence Scramble</span></div>
+  <div style="padding-top:1.25rem"></div>
+  <div class="cx">
+    <h3>Armá las oraciones</h3>
+    <p class="inst">Tocá las palabras en el orden correcto para construir la oración. Si te equivocás, tocá una palabra en el área armada para sacarla.</p>
+  </div>
+  <div class="cx" id="e2">
+    <div class="it sci" data-correct="The bank is next to the supermarket" data-why="Estructura: Sujeto (The bank) + verbo (is) + preposición (next to) + artículo (the) + objeto (supermarket). &quot;Next to&quot; siempre va junto, es una preposición compuesta.">
+      <label><span class="n">1.</span> <em>(El banco está al lado del supermercado.)</em></label>
+      <div class="sc-tgt"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:.35rem"><button class="sc-w" onclick="tapW(this)">supermarket</button><button class="sc-w" onclick="tapW(this)">next</button><button class="sc-w" onclick="tapW(this)">The</button><button class="sc-w" onclick="tapW(this)">to</button><button class="sc-w" onclick="tapW(this)">is</button><button class="sc-w" onclick="tapW(this)">bank</button><button class="sc-w" onclick="tapW(this)">the</button></div>
+      <div class="fb"></div>
+    </div>
+    <div class="it sci" data-correct="She has got a computer" data-why="Estructura: Sujeto (She) + verbo (has got) + artículo (a) + objeto (computer). &quot;Has got&quot; es el verbo compuesto, no se separa. &quot;A&quot; va antes del sustantivo singular.">
+      <label><span class="n">2.</span> <em>(Ella tiene una computadora.)</em></label>
+      <div class="sc-tgt"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:.35rem"><button class="sc-w" onclick="tapW(this)">computer</button><button class="sc-w" onclick="tapW(this)">got</button><button class="sc-w" onclick="tapW(this)">a</button><button class="sc-w" onclick="tapW(this)">has</button><button class="sc-w" onclick="tapW(this)">She</button></div>
+      <div class="fb"></div>
+    </div>
+    <div class="it sci" data-correct="There are some oranges on the table" data-why="Estructura: There are + cuantificador (some) + objeto (oranges) + preposición (on) + artículo (the) + lugar (table). &quot;Some&quot; va antes del sustantivo plural.">
+      <label><span class="n">3.</span> <em>(Hay algunas naranjas sobre la mesa.)</em></label>
+      <div class="sc-tgt"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:.35rem"><button class="sc-w" onclick="tapW(this)">table</button><button class="sc-w" onclick="tapW(this)">some</button><button class="sc-w" onclick="tapW(this)">on</button><button class="sc-w" onclick="tapW(this)">There</button><button class="sc-w" onclick="tapW(this)">oranges</button><button class="sc-w" onclick="tapW(this)">are</button><button class="sc-w" onclick="tapW(this)">the</button></div>
+      <div class="fb"></div>
+    </div>
+    <div class="it sci" data-correct="The cinema is opposite the library" data-why="Estructura: Sujeto (The cinema) + verbo (is) + preposición (opposite) + artículo (the) + referencia (library). &quot;Opposite&quot; es la preposición que indica &quot;enfrente&quot;.">
+      <label><span class="n">4.</span> <em>(El cine está enfrente de la biblioteca.)</em></label>
+      <div class="sc-tgt"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:.35rem"><button class="sc-w" onclick="tapW(this)">library</button><button class="sc-w" onclick="tapW(this)">opposite</button><button class="sc-w" onclick="tapW(this)">is</button><button class="sc-w" onclick="tapW(this)">the</button><button class="sc-w" onclick="tapW(this)">cinema</button><button class="sc-w" onclick="tapW(this)">The</button></div>
+      <div class="fb"></div>
+    </div>
+    <div class="it sci" data-correct="He hasn't got any pencils" data-why="Estructura: Sujeto (He) + negación (hasn't got) + cuantificador (any) + objeto (pencils). En oraciones negativas usamos &quot;any&quot;, no &quot;some&quot;.">
+      <label><span class="n">5.</span> <em>(Él no tiene ningún lápiz.)</em></label>
+      <div class="sc-tgt"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:.35rem"><button class="sc-w" onclick="tapW(this)">pencils</button><button class="sc-w" onclick="tapW(this)">any</button><button class="sc-w" onclick="tapW(this)">got</button><button class="sc-w" onclick="tapW(this)">hasn't</button><button class="sc-w" onclick="tapW(this)">He</button></div>
+      <div class="fb"></div>
+    </div>
+    <div class="btns"><button class="btn-c" onclick="checkScramble('e2')">Verificar</button><button class="btn-r" onclick="resetScramble('e2')">Reiniciar</button><div class="sc" id="sc-e2"></div></div>
+  </div>
+</div>
+
+<!-- ═══════════ EX 3: ERROR HUNTER ═══════════ -->
+<div class="screen" id="ex3">
+  <div class="ex-top"><button class="bk" onclick="goMenu()">← Volver</button><span class="ex-top-t">Error Hunter</span></div>
+  <div style="padding-top:1.25rem"></div>
+  <div class="cx"><h3>Encontrá el error y corregilo</h3><p class="inst">Cada oración de arriba tiene un error. Elegí la versión correcta entre las opciones.</p></div>
+  <div class="cx" id="e3">
+    <div class="it" data-a="the hospital is near the school" data-why="El error era &quot;are&quot; en vez de &quot;is&quot;. &quot;Hospital&quot; es singular, así que el verbo debe ser &quot;is&quot;, no &quot;are&quot;. Regla: sujetos singulares → is; sujetos plurales → are.">
+      <label><span class="n">1.</span> ❌ <em>"The hospital <strong>are</strong> near the school."</em></label>
+      <select class="sel"><option value="">Elegí la versión correcta...</option><option value="the hospital are near the hospital">The hospital are near the hospital.</option><option value="the hospital is near the school">The hospital is near the school.</option><option value="the hospitals is near the school">The hospitals is near the school.</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="she has got some books" data-why="El error era &quot;any&quot; en una oración afirmativa. &quot;She has got&quot; es positivo, así que necesitamos &quot;some&quot;, no &quot;any&quot;. Recordá: some = afirmativas, any = negativas/preguntas.">
+      <label><span class="n">2.</span> ❌ <em>"She has got <strong>any</strong> books."</em></label>
+      <select class="sel"><option value="">Elegí la versión correcta...</option><option value="she has got any books">She has got any books.</option><option value="she has got some books">She has got some books.</option><option value="she hasn't got some books">She hasn't got some books.</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="the bank is next to the pharmacy" data-why="El error era el orden de palabras: &quot;to next&quot; en vez de &quot;next to&quot;. La preposición compuesta &quot;next to&quot; siempre va en ese orden: next primero, to después.">
+      <label><span class="n">3.</span> ❌ <em>"The bank is <strong>to next</strong> the pharmacy."</em></label>
+      <select class="sel"><option value="">Elegí la versión correcta...</option><option value="the bank is next from the pharmacy">The bank is next from the pharmacy.</option><option value="the bank is to next the pharmacy">The bank is to next the pharmacy.</option><option value="the bank is next to the pharmacy">The bank is next to the pharmacy.</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="i don't have any money" data-why="El error era &quot;some&quot; en una oración negativa. &quot;Don't have&quot; es negativo, así que necesitamos &quot;any&quot;. Nunca usamos &quot;some&quot; en oraciones negativas.">
+      <label><span class="n">4.</span> ❌ <em>"I don't have <strong>some</strong> money."</em></label>
+      <select class="sel"><option value="">Elegí la versión correcta...</option><option value="i don't have some money">I don't have some money.</option><option value="i don't have any money">I don't have any money.</option><option value="i doesn't have any money">I doesn't have any money.</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="there is a university near my house" data-why="El error era &quot;an university&quot;. Aunque &quot;university&quot; empieza con la letra U, su sonido inicial es /juː/ (como &quot;iú&quot;), que es un sonido de consonante. Por eso usamos &quot;a&quot;, no &quot;an&quot;. La regla depende del SONIDO, no de la letra.">
+      <label><span class="n">5.</span> ❌ <em>"There is <strong>an</strong> university near my house."</em></label>
+      <select class="sel"><option value="">Elegí la versión correcta...</option><option value="there is an university near my house">There is an university near my house.</option><option value="there is a university near my house">There is a university near my house.</option><option value="there are a university near my house">There are a university near my house.</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="btns"><button class="btn-c" onclick="check('e3')">Verificar</button><button class="btn-r" onclick="reset_('e3')">Reiniciar</button><div class="sc" id="sc-e3"></div></div>
+  </div>
+</div>
+
+<!-- ═══════════ EX 4: WHAT WOULD YOU SAY ═══════════ -->
+<div class="screen" id="ex4">
+  <div class="ex-top"><button class="bk" onclick="goMenu()">← Volver</button><span class="ex-top-t">What Would You Say?</span></div>
+  <div style="padding-top:1.25rem"></div>
+  <div class="cx"><h3>Elegí la respuesta correcta</h3><p class="inst">Leé cada situación y elegí qué dirías en inglés.</p></div>
+  <div class="cx" id="e4">
+    <div class="it" data-a="where can i send a letter" data-why="La situación pide enviar una carta. &quot;Send a letter&quot; = enviar una carta, y se hace en el correo. &quot;Buy a letter&quot; no tiene sentido (no se compran cartas) y &quot;see a letter&quot; tampoco.">
+      <label><span class="n">1.</span> 📬 Necesitás enviar una carta a tu abuela. ¿Qué preguntás?</label>
+      <select class="sel"><option value="">Elegí...</option><option value="where can i buy a letter">"Where can I buy a letter?"</option><option value="where can i send a letter">"Where can I send a letter?"</option><option value="where can i see a letter">"Where can I see a letter?"</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="i need to go to the pharmacy" data-why="La persona tiene dolor de cabeza y necesita una aspirina. Los medicamentos se compran en la farmacia (pharmacy), no en el banco ni en la biblioteca.">
+      <label><span class="n">2.</span> 💊 Tenés dolor de cabeza y necesitás una aspirina. ¿A dónde vas?</label>
+      <select class="sel"><option value="">Elegí...</option><option value="i need to go to the bank">"I need to go to the bank."</option><option value="i need to go to the pharmacy">"I need to go to the pharmacy."</option><option value="i need to go to the library">"I need to go to the library."</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="the museum is opposite the park" data-why="La persona dice que el museo está &quot;enfrente&quot; del parque, al otro lado de la calle. &quot;Opposite&quot; = enfrente, &quot;next to&quot; = al lado, &quot;near&quot; = cerca. La clave es &quot;al otro lado de la calle&quot;.">
+      <label><span class="n">3.</span> 🗺️ Un turista te pregunta dónde está el museo. Está al otro lado de la calle del parque. ¿Qué decís?</label>
+      <select class="sel"><option value="">Elegí...</option><option value="the museum is next to the park">"The museum is next to the park."</option><option value="the museum is opposite the park">"The museum is opposite the park."</option><option value="the museum is between the park">"The museum is between the park."</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="i don't have any brothers or sisters" data-why="Tu amigo te pregunta si tenés hermanos y no tenés. En una respuesta negativa usamos &quot;any&quot;, no &quot;some&quot;. &quot;Don't have&quot; es negativo → any.">
+      <label><span class="n">4.</span> 👨‍👩‍👦 Tu amigo te pregunta si tenés hermanos. No tenés. ¿Qué respondés?</label>
+      <select class="sel"><option value="">Elegí...</option><option value="i don't have some brothers">"I don't have some brothers."</option><option value="i haven't got some brothers">"I haven't got some brothers."</option><option value="i don't have any brothers or sisters">"I don't have any brothers or sisters."</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="would you like some tea" data-why="Estás ofreciendo algo a un invitado. Cuando ofrecés amablemente, usamos &quot;some&quot; en la pregunta, no &quot;any&quot;. &quot;Would you like some...&quot; es la forma cortés de ofrecer.">
+      <label><span class="n">5.</span> 🍵 Tenés un invitado en tu casa y querés ofrecerle algo de tomar. ¿Qué decís?</label>
+      <select class="sel"><option value="">Elegí...</option><option value="would you like any tea">"Would you like any tea?"</option><option value="would you like some tea">"Would you like some tea?"</option><option value="do you have some tea">"Do you have some tea?"</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="btns"><button class="btn-c" onclick="check('e4')">Verificar</button><button class="btn-r" onclick="reset_('e4')">Reiniciar</button><div class="sc" id="sc-e4"></div></div>
+  </div>
+</div>
+
+<!-- ═══════════ EX 5: VISUAL PREPOSITIONS ═══════════ -->
+<div class="screen" id="ex5">
+  <div class="ex-top"><button class="bk" onclick="goMenu()">← Volver</button><span class="ex-top-t">Visual Prepositions</span></div>
+  <div style="padding-top:1.25rem"></div>
+  <div class="cx"><h3>Mirá el dibujo y elegí la preposición</h3><p class="inst">Cada escena muestra dos o tres edificios. Observá bien su ubicación relativa y elegí la preposición correcta.</p></div>
+  <div class="cx" id="e5">
+    <!-- Scene 1: OPPOSITE -->
+    <div class="it" data-a="opposite" data-why="Los dos edificios están uno frente al otro, con una calle en medio. Building A mira hacia Building B al otro lado de la road. Cuando hay una calle entre dos edificios que se miran de frente → &quot;opposite&quot;.">
+      <label><span class="n">1.</span> Building A está __________ Building B.</label>
+      <div class="mm-wrap"><svg viewBox="0 0 220 90"><rect width="220" height="90" fill="#0b1525" rx="8"/><rect x="0" y="36" width="220" height="18" fill="#152030"/><text x="110" y="48" text-anchor="middle" fill="#3a5570" font-size="5" font-family="'DM Mono',monospace" letter-spacing="2">ROAD</text><rect x="45" y="5" width="130" height="26" rx="4" fill="#1a2040" stroke="#2a3565"/><text x="110" y="22" text-anchor="middle" fill="#8899cc" font-size="8" font-family="'DM Mono',monospace">BUILDING A</text><rect x="45" y="59" width="130" height="26" rx="4" fill="#2d1518" stroke="#552025"/><text x="110" y="76" text-anchor="middle" fill="#d08090" font-size="8" font-family="'DM Mono',monospace">BUILDING B</text><line x1="110" y1="33" x2="110" y2="57" stroke="#f0b429" stroke-width="1" stroke-dasharray="3,2" opacity=".5"/></svg></div>
+      <select class="sel"><option value="">Elegí...</option><option value="next to">next to</option><option value="opposite">opposite</option><option value="between">between</option><option value="near">near</option></select>
+      <div class="fb"></div>
+    </div>
+    <!-- Scene 2: NEXT TO -->
+    <div class="it" data-a="next to" data-why="Los dos edificios están en el mismo lado de la calle, uno pegado al otro, sin nada en medio. Cuando dos cosas están inmediatamente juntas → &quot;next to&quot;.">
+      <label><span class="n">2.</span> The café está __________ the bookshop.</label>
+      <div class="mm-wrap"><svg viewBox="0 0 220 90"><rect width="220" height="90" fill="#0b1525" rx="8"/><rect x="0" y="60" width="220" height="18" fill="#152030"/><text x="110" y="72" text-anchor="middle" fill="#3a5570" font-size="5" font-family="'DM Mono',monospace" letter-spacing="2">ROAD</text><rect x="10" y="8" width="95" height="46" rx="4" fill="#251a0a" stroke="#3d2810"/><text x="57" y="35" text-anchor="middle" fill="#c09050" font-size="8" font-family="'DM Mono',monospace">CAFÉ</text><rect x="115" y="8" width="95" height="46" rx="4" fill="#1a1535" stroke="#2d2060"/><text x="162" y="35" text-anchor="middle" fill="#9080c0" font-size="8" font-family="'DM Mono',monospace">BOOKSHOP</text></svg></div>
+      <select class="sel"><option value="">Elegí...</option><option value="next to">next to</option><option value="opposite">opposite</option><option value="between">between</option><option value="around the corner">around the corner</option></select>
+      <div class="fb"></div>
+    </div>
+    <!-- Scene 3: BETWEEN -->
+    <div class="it" data-a="between" data-why="Hay tres edificios en fila: Hospital, Pharmacy, Bank. La Pharmacy está en el medio de los otros dos. Cuando algo está posicionado en el medio de DOS referencias → &quot;between A and B&quot;.">
+      <label><span class="n">3.</span> The pharmacy está __________ the hospital and the bank.</label>
+      <div class="mm-wrap"><svg viewBox="0 0 220 70"><rect width="220" height="70" fill="#0b1525" rx="8"/><rect x="5" y="10" width="58" height="50" rx="4" fill="#2d1518" stroke="#552025"/><text x="34" y="40" text-anchor="middle" fill="#d08090" font-size="6" font-family="'DM Mono',monospace">HOSPITAL</text><rect x="73" y="10" width="58" height="50" rx="4" fill="#2d1020" stroke="#452035"/><text x="102" y="40" text-anchor="middle" fill="#e0a0b0" font-size="6" font-family="'DM Mono',monospace">PHARMACY</text><rect x="141" y="10" width="58" height="50" rx="4" fill="#141e38" stroke="#253560"/><text x="170" y="40" text-anchor="middle" fill="#6888cc" font-size="6" font-family="'DM Mono',monospace">BANK</text><line x1="73" y1="35" x2="73" y2="35" stroke="#f0b429" stroke-width="1"/><polygon points="102,8 98,2 106,2" fill="#f0b429" opacity=".6"/></svg></div>
+      <select class="sel"><option value="">Elegí...</option><option value="next to">next to</option><option value="opposite">opposite</option><option value="between">between</option><option value="near">near</option></select>
+      <div class="fb"></div>
+    </div>
+    <!-- Scene 4: AROUND THE CORNER -->
+    <div class="it" data-a="around the corner" data-why="El banco está en la esquina, y la escuela está en la otra calle (dobló en la esquina). Cuando un lugar está en una calle diferente, pasado el rincón → &quot;around the corner&quot;.">
+      <label><span class="n">4.</span> The school está __________ the bank.</label>
+      <div class="mm-wrap"><svg viewBox="0 0 180 120"><rect width="180" height="120" fill="#0b1525" rx="8"/><rect x="10" y="55" width="160" height="16" fill="#152030"/><text x="90" y="66" text-anchor="middle" fill="#3a5570" font-size="4.5" font-family="'DM Mono',monospace" letter-spacing="1.5">OAK STREET</text><rect x="88" y="0" width="16" height="120" fill="#152030"/><text x="96" y="115" text-anchor="middle" fill="#3a5570" font-size="4" font-family="'DM Mono',monospace" transform="rotate(-90,96,110)" letter-spacing="1">MAIN ST</text><rect x="110" y="76" width="60" height="38" rx="4" fill="#1a2040" stroke="#2a3565"/><text x="140" y="100" text-anchor="middle" fill="#8899cc" font-size="7" font-family="'DM Mono',monospace">BANK</text><rect x="16" y="10" width="60" height="38" rx="4" fill="#0d2818" stroke="#1a4d2e"/><text x="46" y="34" text-anchor="middle" fill="#60b080" font-size="7" font-family="'DM Mono',monospace">SCHOOL</text><path d="M82,29 L92,29 L92,72" fill="none" stroke="#f0b429" stroke-width="1" stroke-dasharray="3,2" opacity=".4"/><text x="86" y="48" fill="#f0b42966" font-size="8">↱</text></svg></div>
+      <select class="sel"><option value="">Elegí...</option><option value="next to">next to</option><option value="opposite">opposite</option><option value="around the corner">around the corner</option><option value="across from">across from</option></select>
+      <div class="fb"></div>
+    </div>
+    <!-- Scene 5: ACROSS FROM -->
+    <div class="it" data-a="across from" data-why="El hotel y la plaza están uno frente al otro con una avenida en el medio. &quot;Across from&quot; significa lo mismo que &quot;opposite&quot;: al otro lado de la calle, mirándose de frente.">
+      <label><span class="n">5.</span> The hotel está __________ the plaza.</label>
+      <div class="mm-wrap"><svg viewBox="0 0 220 100"><rect width="220" height="100" fill="#0b1525" rx="8"/><rect x="0" y="40" width="220" height="20" fill="#152030"/><text x="110" y="53" text-anchor="middle" fill="#3a5570" font-size="5" font-family="'DM Mono',monospace" letter-spacing="2">AVENUE</text><rect x="20" y="6" width="180" height="28" rx="4" fill="#281e0a" stroke="#4a3510"/><text x="110" y="24" text-anchor="middle" fill="#d0a840" font-size="9" font-family="'DM Mono',monospace">HOTEL</text><rect x="60" y="66" width="100" height="28" rx="4" fill="#201a10" stroke="#3a3020"/><text x="110" y="84" text-anchor="middle" fill="#c0a850" font-size="9" font-family="'DM Mono',monospace">PLAZA</text></svg></div>
+      <select class="sel"><option value="">Elegí...</option><option value="next to">next to</option><option value="across from">across from</option><option value="between">between</option><option value="near">near</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="btns"><button class="btn-c" onclick="check('e5')">Verificar</button><button class="btn-r" onclick="reset_('e5')">Reiniciar</button><div class="sc" id="sc-e5"></div></div>
+  </div>
+</div>
+
+<!-- ═══════════ EX 6: TRANSFORM ═══════════ -->
+<div class="screen" id="ex6">
+  <div class="ex-top"><button class="bk" onclick="goMenu()">← Volver</button><span class="ex-top-t">Transform It!</span></div>
+  <div style="padding-top:1.25rem"></div>
+  <div class="cx"><h3>Convertí las oraciones</h3><p class="inst">Elegí la transformación correcta. Prestá atención a cómo cambian <em>some/any</em> y los verbos auxiliares.</p></div>
+  <div class="cx" id="e6">
+    <div class="it" data-a="she hasn't got any posters" data-why="Para negar &quot;has&quot; usamos &quot;hasn't&quot;. &quot;Some&quot; en afirmativa cambia a &quot;any&quot; en negativa. Resultado: She hasn't got any posters.">
+      <label><span class="n">1.</span> She has some posters. → <em>(negativo)</em></label>
+      <select class="sel"><option value="">Elegí...</option><option value="she hasn't got some posters">She hasn't got some posters.</option><option value="she hasn't got any posters">She hasn't got any posters.</option><option value="she doesn't have some posters">She doesn't have some posters.</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="there isn't a computer" data-why="&quot;There is&quot; se niega con &quot;There isn't&quot;. &quot;A&quot; se mantiene porque es singular contable (no cambia a &quot;any&quot;). Resultado: There isn't a computer.">
+      <label><span class="n">2.</span> There is a computer. → <em>(negativo)</em></label>
+      <select class="sel"><option value="">Elegí...</option><option value="there isn't a computer">There isn't a computer.</option><option value="there isn't any computer">There isn't any computer.</option><option value="there aren't a computer">There aren't a computer.</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="have they got any flowers" data-why="Para preguntar con &quot;have&quot;, invertimos: &quot;Have they got...?&quot;. &quot;Some&quot; en afirmativa cambia a &quot;any&quot; en pregunta. Resultado: Have they got any flowers?">
+      <label><span class="n">3.</span> They have some flowers. → <em>(pregunta)</em></label>
+      <select class="sel"><option value="">Elegí...</option><option value="do they have some flowers">Do they have some flowers?</option><option value="have they got any flowers">Have they got any flowers?</option><option value="have they got some flowers">Have they got some flowers?</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="he hasn't got an umbrella" data-why="Para negar &quot;has got&quot; usamos &quot;hasn't got&quot;. &quot;An&quot; se mantiene porque es singular contable (no cambia a &quot;any&quot;). Resultado: He hasn't got an umbrella.">
+      <label><span class="n">4.</span> He has got an umbrella. → <em>(negativo)</em></label>
+      <select class="sel"><option value="">Elegí...</option><option value="he hasn't got an umbrella">He hasn't got an umbrella.</option><option value="he hasn't got any umbrella">He hasn't got any umbrella.</option><option value="he doesn't got an umbrella">He doesn't got an umbrella.</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="it" data-a="we don't need any help" data-why="Para negar &quot;need&quot; usamos &quot;don't need&quot; (auxiliar do + not). &quot;Some&quot; cambia a &quot;any&quot; en negativa. Resultado: We don't need any help.">
+      <label><span class="n">5.</span> We need some help. → <em>(negativo)</em></label>
+      <select class="sel"><option value="">Elegí...</option><option value="we don't need some help">We don't need some help.</option><option value="we don't need any help">We don't need any help.</option><option value="we haven't need any help">We haven't need any help.</option></select>
+      <div class="fb"></div>
+    </div>
+    <div class="btns"><button class="btn-c" onclick="check('e6')">Verificar</button><button class="btn-r" onclick="reset_('e6')">Reiniciar</button><div class="sc" id="sc-e6"></div></div>
+  </div>
+</div>
+
+<footer class="foot"><p>English 2do Año — Ejercicios Interactivos</p></footer>
+</div>
+
+<script>
+const completed=new Set();
+
+/* ── NAVIGATION ── */
+function openEx(n){document.getElementById('menu').classList.remove('active');document.getElementById('ex'+n).classList.add('active');window.scrollTo(0,0)}
+function goMenu(){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('menu').classList.add('active');window.scrollTo(0,0)}
+
+/* ── SCORING ── */
+function score(id,c,t){const s=document.getElementById('sc-'+id);s.textContent=c+' / '+t+' ('+Math.round(c/t*100)+'%)';s.classList.add('vis');if(c===t)completed.add(id);else completed.delete(id);upProg()}
+function upProg(){const t=6,d=completed.size,p=Math.round(d/t*100);document.getElementById('pp').textContent=d+' / '+t;document.getElementById('pf').style.width=p+'%'}
+
+/* ── CHECK (selects + tf) ── */
+function check(id){
+  const b=document.getElementById(id),items=b.querySelectorAll('.it:not(.sci)');let c=0,t=items.length;
+  items.forEach(it=>{
+    const ans=(it.dataset.a||'').toLowerCase().trim(),why=it.dataset.why||'',fb=it.querySelector('.fb');
+    const sel=it.querySelector('.sel');const picked=it.querySelector('.tf[data-p]');
+    it.classList.remove('ok','err');fb.classList.remove('ok-fb','err-fb','show');
+    if(sel){
+      const u=sel.value.toLowerCase().trim();
+      if(!u){it.classList.add('err');fb.innerHTML='<span class="fl er-l">Sin respuesta</span><strong>Respuesta:</strong> '+ans.charAt(0).toUpperCase()+ans.slice(1)+'. '+why;fb.classList.add('err-fb','show');return}
+      if(u===ans){it.classList.add('ok');fb.innerHTML='<span class="fl ok-l">¡Correcto!</span>'+why;fb.classList.add('ok-fb','show');c++}
+      else{it.classList.add('err');fb.innerHTML='<span class="fl er-l">Incorrecto</span><strong>Tu respuesta:</strong> '+u.charAt(0).toUpperCase()+u.slice(1)+'<br><strong>Correcta:</strong> '+ans.charAt(0).toUpperCase()+ans.slice(1)+'.<br>'+why;fb.classList.add('err-fb','show')}
+    }else if(picked){
+      if(picked.dataset.p===ans){it.classList.add('ok');fb.innerHTML='<span class="fl ok-l">¡Correcto!</span>'+why;fb.classList.add('ok-fb','show');c++}
+      else{it.classList.add('err');fb.innerHTML='<span class="fl er-l">Incorrecto</span>'+why;fb.classList.add('err-fb','show')}
+    }
+  });score(id,c,t)
+}
+
+/* ── TF ── */
+function pickTF(btn,v){const it=btn.closest('.it');it.querySelectorAll('.tf').forEach(b=>{b.classList.remove('st','sf');b.dataset.p=''});btn.dataset.p='1';btn.classList.add(v==='t'?'st':'sf')}
+
+/* ── RESET ── */
+function reset_(id){const b=document.getElementById(id);b.querySelectorAll('.it').forEach(it=>{it.classList.remove('ok','err');const s=it.querySelector('.sel');if(s)s.selectedIndex=0;it.querySelectorAll('.tf').forEach(btn=>{btn.classList.remove('st','sf');btn.dataset.p=''});const f=it.querySelector('.fb');f.innerHTML='';f.classList.remove('ok-fb','err-fb','show')});document.getElementById('sc-'+id).classList.remove('vis');completed.delete(id);upProg()}
+
+/* ── SCRAMBLE ── */
+function tapW(btn){const it=btn.closest('.sci'),tgt=it.querySelector('.sc-tgt');const ch=document.createElement('span');ch.className='sc-ch';ch.textContent=btn.textContent;ch.onclick=function(){btn.style.display='';btn.disabled=false;ch.remove();tgt.classList.toggle('has-words',tgt.children.length>0)};tgt.appendChild(ch);btn.style.display='none';btn.disabled=true;tgt.classList.add('has-words')}
+
+function checkScramble(id){
+  const items=document.querySelectorAll('#'+id+' .sci');let c=0,t=items.length;
+  items.forEach(it=>{
+    const chips=it.querySelectorAll('.sc-ch'),words=Array.from(chips).map(x=>x.textContent);
+    const correct=(it.dataset.correct||'').toLowerCase(),why=it.dataset.why||'';
+    const fb=it.querySelector('.fb');it.classList.remove('ok','err');fb.classList.remove('ok-fb','err-fb','show');
+    const user=words.join(' ').toLowerCase();
+    if(!words.length){it.classList.add('err');fb.innerHTML='<span class="fl er-l">Sin respuesta</span><strong>Orden correcto:</strong> '+it.dataset.correct+'. '+why;fb.classList.add('err-fb','show');return}
+    if(user===correct){it.classList.add('ok');fb.innerHTML='<span class="fl ok-l">¡Correcto!</span>'+why;fb.classList.add('ok-fb','show');c++}
+    else{it.classList.add('err');fb.innerHTML='<span class="fl er-l">Incorrecto</span><strong>Tu oración:</strong> '+words.join(' ')+'<br><strong>Correcta:</strong> '+it.dataset.correct+'.<br>'+why;fb.classList.add('err-fb','show')}
+  });score(id,c,t)
+}
+
+function resetScramble(id){
+  const b=document.getElementById(id);
+  b.querySelectorAll('.sci').forEach(it=>{it.classList.remove('ok','err');
+    const tgt=it.querySelector('.sc-tgt');tgt.innerHTML='';tgt.classList.remove('has-words');
+    it.querySelectorAll('.sc-w').forEach(w=>{w.style.display='';w.disabled=false});
+    const fb=it.querySelector('.fb');fb.innerHTML='';fb.classList.remove('ok-fb','err-fb','show');
+  });document.getElementById('sc-'+id).classList.remove('vis');completed.delete(id);upProg()
+}
+</script>
+</body>
+</html>
